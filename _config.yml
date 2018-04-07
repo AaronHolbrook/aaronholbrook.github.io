@@ -99,17 +99,14 @@ defaults:
 
 # Site Author
 author:
-  name: Michael Rose
-  picture: /images/michael-rose-photo.jpg
+  name: Aaron Holbrook
+  picture: /images/aaron-holbrook-photo.jpg
   email:
-  twitter: mmistakes
+  twitter: aaronjholbrook
   links:
     - title: Twitter
-      url: https://twitter.com/mmistakes
+      url: https://twitter.com/aaronjholbrook
       icon: fab fa-twitter-square
-    - title: Instagram
-      url: https://instagram.com/mmistakes
-      icon: fab fa-instagram
     - title: GitHub
       url: https://github.com/mmistakes
       icon: fab fa-github-square
@@ -117,13 +114,10 @@ author:
 # Footer Links
 footer_links:
   - title: Twitter
-    url: https://twitter.com/mmistakes
+    url: https://twitter.com/aaronjholbrook
     icon: fab fa-twitter-square
-  - title: Instagram
-    url: https://instagram.com/mmistakes
-    icon: fab fa-instagram
   - title: GitHub
-    url: https://github.com/mmistakes
+    url: https://github.com/aaronholbrook
     icon: fab fa-github-square
   - title: Feed
     url: atom.xml
