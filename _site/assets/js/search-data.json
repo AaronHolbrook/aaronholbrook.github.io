@@ -1,0 +1,6 @@
+var store = [{
+        "title": "Sample Post",
+        "excerpt":"Below is just about everything you’ll need to style in the theme. Check the source code to see the many embedded elements within paragraphs.Heading 1Heading 2Heading 3Heading 4Heading 5Heading 6Body textLorem ipsum dolor sit amet, test link adipiscing elit. This is strong. Nullam dignissim convallis est. Quisque aliquam.This is emphasized....","categories": ["articles"],
+        "tags": ["sample-post"],
+        "url": "http://localhost:4000/articles/2018/04/07/sample-post.html"
+      }]

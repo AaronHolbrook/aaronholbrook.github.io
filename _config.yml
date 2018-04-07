@@ -1,1 +1,8 @@
-theme: minima
+theme: jekyll-theme-so-simple
+locale: "en-us"
+title: Aaron Holbrook
+baseurl: ""
+url: "https://aaronholbrook.github.io"
+
+logo: "/images/a7-dark-on-light.png"
+copyright: "This site is made with :heart: by Aaron Holbrook."
