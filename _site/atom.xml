@@ -1,4 +1,130 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-04-07T22:36:29-05:00</updated><id>http://localhost:4000/</id><title type="html">Holbrook, Inc.</title><subtitle>Stuff that matters. :+1:</subtitle><author><name>Aaron Holbrook</name></author><entry><title type="html">Screencast: Intro to Git</title><link href="http://localhost:4000/screencast-01-intro-to-git" rel="alternate" type="text/html" title="Screencast: Intro to Git" /><published>2012-09-10T00:00:00-05:00</published><updated>2012-09-10T00:00:00-05:00</updated><id>http://localhost:4000/screencast-intro-to-git</id><content type="html" xml:base="http://localhost:4000/screencast-01-intro-to-git">&lt;p&gt;Thought it’d be nice to demo how to set up and get your own repository going with Git.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-04-07T23:07:56-05:00</updated><id>http://localhost:4000/</id><title type="html">Holbrook, Inc.</title><subtitle>Stuff that matters. :+1:</subtitle><author><name>Aaron Holbrook</name></author><entry><title type="html">WordPress Template Hierarchy Explained</title><link href="http://localhost:4000/wordpress-template-hierarchy-explained" rel="alternate" type="text/html" title="WordPress Template Hierarchy Explained" /><published>2013-02-22T00:00:00-06:00</published><updated>2013-02-22T00:00:00-06:00</updated><id>http://localhost:4000/wordpress-template-hierarchy-explained</id><content type="html" xml:base="http://localhost:4000/wordpress-template-hierarchy-explained">&lt;p&gt;I did a quick screencast on what the WordPress Template Hierarchy is and why understanding it is one of the first steps to becoming a good WordPress developer.&lt;/p&gt;
+
+&lt;div class=&quot;responsive-embed responsive-embed-16by9&quot;&gt;
+  &lt;iframe src=&quot;http://www.youtube.com/watch?v=-AO5jBsUpJY&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">I did a quick screencast on what the WordPress Template Hierarchy is and why understanding it is one of the first steps to becoming a good WordPress developer.</summary></entry><entry><title type="html">My solution to quickly syncing .bash_profile on multiple machines</title><link href="http://localhost:4000/my-solution-to-quickly-syncing-bash_profile-on-multiple-machines" rel="alternate" type="text/html" title="My solution to quickly syncing .bash_profile on multiple machines" /><published>2013-01-15T00:00:00-06:00</published><updated>2013-01-15T00:00:00-06:00</updated><id>http://localhost:4000/my-solution-to-quickly-syncing-bash_profile-on-multiple-machines</id><content type="html" xml:base="http://localhost:4000/my-solution-to-quickly-syncing-bash_profile-on-multiple-machines">&lt;p&gt;You know that feeling when you’re setting up a brand new server and it’s not set up the way you’ve spent years tweaking it to be?&lt;/p&gt;
+
+&lt;figure class=&quot;align-center&quot;&gt;
+  &lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/bash-profile-syncing-comfortable.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+  &lt;figcaption&gt;Nice and comfy customized `.bash_profile`, even got my `ls` command to show hidden files by default!&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;As opposed to the following (setting up a new linux box, not even ls works how I like it).&lt;/p&gt;
+
+&lt;figure class=&quot;align-center&quot;&gt;
+  &lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/bash-profile-syncing-yuck.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
+  &lt;figcaption&gt;Default. Ugh - beat it with the `.bash_profile` stick please!&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;After taking a brief glance at &lt;a href=&quot;http://alias.sh&quot;&gt;alias.sh&lt;/a&gt;, I decided I wanted to be able to customize things just a little bit more to my liking.&lt;/p&gt;
+
+&lt;p&gt;I came up with the following workflow:&lt;/p&gt;
+&lt;ol&gt;
+	&lt;li&gt;Use GitHub to host a always-up-to-date published `.bash_profile`&lt;/li&gt;
+	&lt;li&gt;Use a TextExpander snippet to easily wget the `.bash_profile` from GitHub onto the new server&lt;/li&gt;
+	&lt;li&gt;[OPTIONAL] Keep my local work machine's aliases separate from remote production machines by separating them out into a `.bash_aliases` file&lt;/li&gt;
+	&lt;li&gt;[OPTIONAL] One more TextExpander snippet for the `.bash_aliases` to make things easy&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;Step 1&lt;/h2&gt;
+
+&lt;p&gt;I published out my files in a new repo on GitHub, titled tersely enough: &lt;a title=&quot;Aaron Holbrook's dotfiles&quot; href=&quot;https://github.com/aaronholbrook/dotfiles&quot;&gt;dotfiles&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I went back and forth between GitHub and BitBucket, and even tried out BitBucket since they offer free private repositories, but unfortunately BitBucket’s URLs for the RAW files include the commit hash, which would be changing with each commit, rendering my TextExpander snippet useless.&lt;/p&gt;
+
+&lt;p&gt;So - because I need the RAW file URL to be unchanging, I went with GitHub, even though it means publicizing all my current aliases. Oh well - enjoy :)&lt;/p&gt;
+
+&lt;p&gt;So - this gets us a public published RAW url that will not change:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://raw.github.com/AaronHolbrook/dotfiles/master/.bash_profile&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;https://raw.github.com/AaronHolbrook/dotfiles/master/.bash_profile&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Step 2&lt;/h2&gt;
+&lt;p&gt;I use the following command:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wget &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-O&lt;/span&gt; - &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$@&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; https://raw.github.com/AaronHolbrook/dotfiles/master/.bash_profile &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; ~/.bash_profile
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;and place it inside a TextExpander snippet with the shortcut of: &lt;code class=&quot;highlighter-rouge&quot;&gt;dotfilespullprofile&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Step 3&lt;/h2&gt;
+
+&lt;p&gt;For my personal use case, I prefer to have my command prompt styled and things like ls and stuff always the same, regardless of if I’m on my own machine or if I’m SSHed into a server. But there are certain aliases that shortcut me to some folders, however I don’t really want those aliases to be on the server (as it’d be pointless and confusing).&lt;/p&gt;
+
+&lt;p&gt;Thus, I separated my aliases into a separate file, which .bash_profile only pulls in if it exists:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; ~/.bash_aliases &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; ~/.bash_aliases
+&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2&gt;Step 4&lt;/h2&gt;
+
+&lt;p&gt;I use the following command to pull in the &lt;code class=&quot;highlighter-rouge&quot;&gt;.bash_alias&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wget &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-O&lt;/span&gt; - &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$@&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; https://raw.github.com/AaronHolbrook/dotfiles/master/.bash_alias &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; ~/.bash_alias
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2&gt;Tada!&lt;/h2&gt;
+&lt;p&gt;And there you have it, a quick and dirty way to sync your always-up-to-date &lt;code class=&quot;highlighter-rouge&quot;&gt;.bash_profile&lt;/code&gt; onto new machines!&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">You know that feeling when you’re setting up a brand new server and it’s not set up the way you’ve spent years tweaking it to be?</summary></entry><entry><title type="html">Full listing of all WordPress functions</title><link href="http://localhost:4000/full-listing-of-all-wordpress-functions" rel="alternate" type="text/html" title="Full listing of all WordPress functions" /><published>2013-01-11T00:00:00-06:00</published><updated>2013-01-11T00:00:00-06:00</updated><id>http://localhost:4000/full-listing-of-all-wordpress-functions</id><content type="html" xml:base="http://localhost:4000/full-listing-of-all-wordpress-functions">&lt;p&gt;Because I’m a huge nerd and my google search results failed to bring up anything resembling a true listing, I thought I would throw together a little curl, grep and sed magic.&lt;/p&gt;
+
+&lt;p&gt;Mostly spent time adjusting the regex to get it just right and strip out all non-essential elements.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; http://codex.wordpress.org/Function_Reference | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; 0 &lt;span class=&quot;s2&quot;&gt;&quot;title=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Function Reference&quot;&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;sed&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'s/.*:.*Function Reference\/.*&quot;&amp;gt;//'&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;sed&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'s/&amp;lt;.*&amp;gt;//'&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;sed&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'s/(.*)//'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; wp-functions.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://gist.github.com/4511254&quot;&gt;Gist&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;UPDATE:&lt;/strong&gt; I was informed by &lt;a title=&quot;Ryan Duff, Twitter fiend&quot; href=&quot;https://twitter.com/ryancduff&quot;&gt;Mr. Ryan Duff&lt;/a&gt; there is in fact a much more comprehensive listing over at &lt;a title=&quot;much more comprehensive WordPress function listing&quot; href=&quot;http://api.wpseek.com/?method=wordpress.getfunctions&amp;amp;output=plain&quot;&gt;WP Seek&lt;/a&gt;.&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">Because I’m a huge nerd and my google search results failed to bring up anything resembling a true listing, I thought I would throw together a little curl, grep and sed magic.</summary></entry><entry><title type="html">Debugging server problems step by step</title><link href="http://localhost:4000/debugging-server-problems-step-by-step" rel="alternate" type="text/html" title="Debugging server problems step by step" /><published>2013-01-10T00:00:00-06:00</published><updated>2013-01-10T00:00:00-06:00</updated><id>http://localhost:4000/debugging-server-problems-step-by-step</id><content type="html" xml:base="http://localhost:4000/debugging-server-problems-step-by-step">&lt;p&gt;First off, I have to give major thanks to &lt;a title=&quot;WordPress Badass&quot; href=&quot;http://evansolomon.me/&quot;&gt;Mr. Evan Solomon&lt;/a&gt; for very graciously helping me diagnose and fix a very hard to pinpoint bug with NGINX and WooCommerce.&lt;/p&gt;
+
+&lt;p&gt;I had recently moved a customized WooCommerce site from MediaTemple GS (which runs Apache as its webserver) to a custom built Linode VPS (which I am running NGINX on). The Linode VPS was successfully set up with NGINX, APC and Varnish cache. The site worked fine, PHP loaded fine, WordPress worked and ran fine. I even had pretty permalinks working just fine with NGINX. So far so good right?&lt;/p&gt;
+
+&lt;p&gt;So I thought - until my client noticed she could not add any of the products to the cart. Quite odd since I didn’t actually change anything in the code, I had simply migrated the files and database to the new server.&lt;/p&gt;
+
+&lt;p&gt;I started to snoop around and I hypothesized that perhaps some of the heavy caching was the culprit. So I disabled Varnish and APC. Still the problem persisted. (This is about the time I brought Evan in).&lt;/p&gt;
+
+&lt;p&gt;Evan suggested I look through the WooCommerce function, most notably the part that validates what has been added to the cart. I refused to believe anything could be wrong in the code, especially because I hadn’t changed anything! It had to be a server issue, right?&lt;/p&gt;
+
+&lt;p&gt;Turns out, going through the code is VERY beneficial, because you can pinpoint at what point the problem is occurring. I placed a &lt;code class=&quot;highlighter-rouge&quot;&gt;var_dump($_REQUEST)&lt;/code&gt;, starting just at the point the WooCommerce validation runs. It came back as &lt;code class=&quot;highlighter-rouge&quot;&gt;NULL&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Huh. So - why wouldn’t it be receiving the query parameters? Ok - let’s go further up suggested Evan. Let’s place a &lt;code class=&quot;highlighter-rouge&quot;&gt;var_dump&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;wp-blog-header.php&lt;/code&gt;. I did and it turned out that &lt;code class=&quot;highlighter-rouge&quot;&gt;$_REQUEST&lt;/code&gt; was still &lt;code class=&quot;highlighter-rouge&quot;&gt;NULL&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;I even put it in &lt;code class=&quot;highlighter-rouge&quot;&gt;index.php&lt;/code&gt; - it couldn’t possibly be &lt;code class=&quot;highlighter-rouge&quot;&gt;NULL&lt;/code&gt; here right? Yep - definitely &lt;code class=&quot;highlighter-rouge&quot;&gt;NULL&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ok - let’s try a simple file called &lt;code class=&quot;highlighter-rouge&quot;&gt;request.php&lt;/code&gt; and put inside it the following.&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;var_dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_REQUEST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Let’s visit that then with a query string: site/request.php?foo=bar.&lt;/p&gt;
+
+&lt;p&gt;Result worked great, so what was it about &lt;code class=&quot;highlighter-rouge&quot;&gt;index.php&lt;/code&gt; that had us so stumped?&lt;/p&gt;
+
+&lt;p&gt;Ready for this?&lt;/p&gt;
+
+&lt;p&gt;Turns out the problem was in the NGINX server config file! In the area for &lt;code class=&quot;highlighter-rouge&quot;&gt;try_files&lt;/code&gt;, I had the following:&lt;/p&gt;
+
+&lt;div class=&quot;language-nginx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kn&quot;&gt;try_files&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$uri&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$uri&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/index.php&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Unfortunately, the end result of this is that it strips all query parameters at the end of &lt;code class=&quot;highlighter-rouge&quot;&gt;index.php&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Evan helped me realize that the configuration should instead look like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-nginx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kn&quot;&gt;try_files&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$uri&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$uri&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/index.php?&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Don’t forget to restart or reload nginx after you’ve made any changes to the config files!&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;service nginx reload
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;So - even if you know the code is good, it helps to debug thoroughly to identify where the problem resides.&lt;/p&gt;
+
+&lt;p&gt;Thanks Evan for your help! You’re a rockstar!&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">First off, I have to give major thanks to Mr. Evan Solomon for very graciously helping me diagnose and fix a very hard to pinpoint bug with NGINX and WooCommerce.</summary></entry><entry><title type="html">Screencast: Intro to Git</title><link href="http://localhost:4000/screencast-01-intro-to-git" rel="alternate" type="text/html" title="Screencast: Intro to Git" /><published>2012-09-10T00:00:00-05:00</published><updated>2012-09-10T00:00:00-05:00</updated><id>http://localhost:4000/screencast-intro-to-git</id><content type="html" xml:base="http://localhost:4000/screencast-01-intro-to-git">&lt;p&gt;Thought it’d be nice to demo how to set up and get your own repository going with Git.&lt;/p&gt;
 
 &lt;div class=&quot;responsive-embed responsive-embed-16by9&quot;&gt;
   &lt;iframe src=&quot;http://www.youtube.com/watch?v=2bg2yVOl5Q0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
@@ -276,64 +402,4 @@
 
 &lt;p&gt;I would gladly drive 7 hours to experience a weekend like the one I just had.&lt;/p&gt;
 
-&lt;p&gt;Human quality connections trump quantity of connections any day.&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">Today was a good day. In fact, this weekend was a good weekend.</summary></entry><entry><title type="html">WordCamp Milwaukee 2012, slides!</title><link href="http://localhost:4000/wordcamp-milwaukee-2012-slides" rel="alternate" type="text/html" title="WordCamp Milwaukee 2012, slides!" /><published>2012-06-02T00:00:00-05:00</published><updated>2012-06-02T00:00:00-05:00</updated><id>http://localhost:4000/wordcamp-milwaukee-2012-slides</id><content type="html" xml:base="http://localhost:4000/wordcamp-milwaukee-2012-slides">&lt;p&gt;Thanks to everyone who attended my session on WordPress and Version Control!&lt;/p&gt;
-
-&lt;p&gt;I promised slides and unfortunately had a bit of a hiccup with bit.ly. Here are the slides:&lt;/p&gt;
-
-&lt;script async=&quot;&quot; class=&quot;speakerdeck-embed&quot; data-id=&quot;50356cf4eca5f60002003eef&quot; data-ratio=&quot;1.33333333333333&quot; src=&quot;//speakerdeck.com/assets/embed.js&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;Feel free to comment or shoot me a message on twitter if you want to talk @aaronjholbrook.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Update: &lt;/strong&gt;slides are now up on speakerdeck. Enjoy!&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">Thanks to everyone who attended my session on WordPress and Version Control!</summary></entry><entry><title type="html">WordCamp Chicago 2011</title><link href="http://localhost:4000/wordcamp-chicago-2011" rel="alternate" type="text/html" title="WordCamp Chicago 2011" /><published>2011-07-31T00:00:00-05:00</published><updated>2011-07-31T00:00:00-05:00</updated><id>http://localhost:4000/wordcamp-chicago-2011</id><content type="html" xml:base="http://localhost:4000/wordcamp-chicago-2011">&lt;p&gt;So I just got back home from the first day of Chicago’s WordCamp 2011 held at the lovely Depaul University in downtown Chicago. Man, what a great experience - I just love the inspiration and the idea sharing that goes on at these conferences.&lt;/p&gt;
-
-&lt;p&gt;Some highlights of the day were:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Dave Tufts' &lt;a href=&quot;http://kickpress.org/&quot;&gt;KickPress WordPress API&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;TJ Stein's great talk on developing fast &amp;amp; scalable servers&lt;/li&gt;
-&lt;li&gt;Jason McCreary's talk about &lt;a href=&quot;http://jason.pureconcepts.net/articles/wordcamp-chicago-talk-configuring-multiple-environments-wordpress?PHPSESSID=76507cc009dfe9ea72300f9a2129f2ef&quot;&gt;developing WordPress on multiple environments&lt;/a&gt; (hooray for finally perfecting my workflow! More on this later!)&lt;/li&gt;
-&lt;li&gt;And finally Brian Richards motivational Developing for Success in which he reveals he's released his development framework &lt;a href=&quot;http://wpstartbox.com/&quot;&gt;Startbox&lt;/a&gt; for free!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Also, at the after party I had the opportunity to meet the fantastic Ryan Imel from &lt;a href=&quot;http://wpcandy.com/&quot;&gt;WP Candy&lt;/a&gt;, which was awesome.&lt;/p&gt;
-
-&lt;p&gt;All in all a great day - and I’m looking forward to more of the same tomorrow.&lt;/p&gt;
-
-&lt;p&gt;Cheers!&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">So I just got back home from the first day of Chicago’s WordCamp 2011 held at the lovely Depaul University in downtown Chicago. Man, what a great experience - I just love the inspiration and the idea sharing that goes on at these conferences.</summary></entry><entry><title type="html">Adding a redirect link from a post (or page)</title><link href="http://localhost:4000/adding-a-redirect-link-from-a-post-or-page" rel="alternate" type="text/html" title="Adding a redirect link from a post (or page)" /><published>2011-07-18T00:00:00-05:00</published><updated>2011-07-18T00:00:00-05:00</updated><id>http://localhost:4000/adding-a-redirect-link-from-a-post-or-page</id><content type="html" xml:base="http://localhost:4000/adding-a-redirect-link-from-a-post-or-page">&lt;p&gt;I just had a client request that for his home page posts that were being displayed, have them link instead to a permanent page. The type of content that they were linking to was longer term and the posts that were being displayed were created just as excerpts.&lt;/p&gt;
-
-&lt;p&gt;Not a problem! Let’s just set up a custom field value, call it ‘redirect’ and go to work.&lt;/p&gt;
-
-&lt;p&gt;So we’ll be editing the page-home.php file and first testing to see if the custom field value exists.&lt;/p&gt;
-
-&lt;p&gt;Using our get_custom_field_value function we’ll do a quick if then statement:&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;get_custom_field_value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'redirect'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;get_custom_field_value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'redirect'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;the_permalink&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
-&lt;span class=&quot;nx&quot;&gt;the_title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;So that will change the title link if there’s a redirect value. We can easily add this to the thumbnail so if there’s a featured image it’ll go to the right page.&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;get_custom_field_value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'redirect'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;get_custom_field_value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'redirect'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;the_permalink&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;the_post_thumbnail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'thumbnail'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'class'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'thumbnail rounded-img'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;All in all, fairly quick and easy. Sure there’s plugins out there, but using a custom field is a little less taxing and just as easy.&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">I just had a client request that for his home page posts that were being displayed, have them link instead to a permanent page. The type of content that they were linking to was longer term and the posts that were being displayed were created just as excerpts.</summary></entry><entry><title type="html">Auto-update version of css</title><link href="http://localhost:4000/auto-update-version-of-css" rel="alternate" type="text/html" title="Auto-update version of css" /><published>2011-06-28T00:00:00-05:00</published><updated>2011-06-28T00:00:00-05:00</updated><id>http://localhost:4000/auto-update-version-of-css</id><content type="html" xml:base="http://localhost:4000/auto-update-version-of-css">&lt;p&gt;I just stumbled across this on &lt;a href=&quot;http://markjaquith.wordpress.com/&quot;&gt;Mark Jaquith’s blog&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;It’s a really handy way of getting around the automatic caching that happens to css files.&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bloginfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'stylesheet_url'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'?'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;filemtime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;get_stylesheet_directory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'/style.css'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/css&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;media=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;screen, projection&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Basically it uses the timestamp as the variable that changes. Anytime you update the css file any browser will think it’s a new file and go and get it.&lt;/p&gt;
-
-&lt;p&gt;Simple and useful - thanks Mark!&lt;/p&gt;
-
-&lt;p&gt;via: &lt;a href=&quot;http://markjaquith.wordpress.com/2009/05/04/force-css-changes-to-go-live-immediately/&quot;&gt;http://markjaquith.wordpress.com/2009/05/04/force-css-changes-to-go-live-immediately/&lt;/a&gt;&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">I just stumbled across this on Mark Jaquith’s blog.</summary></entry></feed>
+&lt;p&gt;Human quality connections trump quantity of connections any day.&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">Today was a good day. In fact, this weekend was a good weekend.</summary></entry></feed>

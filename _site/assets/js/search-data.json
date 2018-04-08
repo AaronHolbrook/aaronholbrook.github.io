@@ -69,6 +69,26 @@ var store = [{
         "tags": [],
         "url": "http://localhost:4000/screencast-01-intro-to-git"
       },{
+        "title": "Debugging server problems step by step",
+        "excerpt":"First off, I have to give major thanks to Mr. Evan Solomon for very graciously helping me diagnose and fix a very hard to pinpoint bug with NGINX and WooCommerce. I had recently moved a customized WooCommerce site from MediaTemple GS (which runs Apache as its webserver) to a custom...","categories": ["Server","Linux","Programming"],
+        "tags": [],
+        "url": "http://localhost:4000/debugging-server-problems-step-by-step"
+      },{
+        "title": "Full listing of all WordPress functions",
+        "excerpt":"Because I’m a huge nerd and my google search results failed to bring up anything resembling a true listing, I thought I would throw together a little curl, grep and sed magic. Mostly spent time adjusting the regex to get it just right and strip out all non-essential elements. curl...","categories": ["WordPress","Programming","Script"],
+        "tags": [],
+        "url": "http://localhost:4000/full-listing-of-all-wordpress-functions"
+      },{
+        "title": "My solution to quickly syncing .bash_profile on multiple machines",
+        "excerpt":"You know that feeling when you’re setting up a brand new server and it’s not set up the way you’ve spent years tweaking it to be? Nice and comfy customized `.bash_profile`, even got my `ls` command to show hidden files by default!As opposed to the following (setting up a new...","categories": ["Programming","Linux","Server"],
+        "tags": [],
+        "url": "http://localhost:4000/my-solution-to-quickly-syncing-bash_profile-on-multiple-machines"
+      },{
+        "title": "WordPress Template Hierarchy Explained",
+        "excerpt":"I did a quick screencast on what the WordPress Template Hierarchy is and why understanding it is one of the first steps to becoming a good WordPress developer.   ","categories": ["WordPress","Programming","Screencast"],
+        "tags": [],
+        "url": "http://localhost:4000/wordpress-template-hierarchy-explained"
+      },{
         "title": "Chocolate Chip Cookies",
         "excerpt":"A chocolate chip cookie is a drop cookie that originated in the United States and features chocolate chips as its distinguishing ingredient. The traditional recipe combines a dough composed of butter and both brown and white sugar with semi-sweet chocolate chips. Variations include recipes with other types of chocolate as...","categories": [],
         "tags": [],
