@@ -1,4 +1,4 @@
 source "https://rubygems.org"
 
-# use local theme gem for testing
+gem "jemoji"
 gem "jekyll-theme-so-simple"

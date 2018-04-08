@@ -16,7 +16,7 @@
 
 locale: en-US
 title: "Holbrook, Inc."
-description: "A sprinkling of thoughts."
+description: "Stuff that matters. :+1:"
 baseurl: ""
 url: https://aaronholbrook.github.io
 logo: "/images/a7-dark-on-light.png"
@@ -36,6 +36,9 @@ disqus:
   shortname: "aaronjholbrook"
 twitter:
   username: aaronjholbrook
+
+# Site
+copyright: "Powered by :coffee: and :heart:"
 
 # Liquid
 liquid:
@@ -70,6 +73,7 @@ tag_archive_path: "/tags/#"
 #   - vendor/ruby/
 
 plugins:
+  - jemoji
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed

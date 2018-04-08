@@ -107,6 +107,7 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll-theme-so-simple
+  jemoji
 
 BUNDLED WITH
    1.16.1

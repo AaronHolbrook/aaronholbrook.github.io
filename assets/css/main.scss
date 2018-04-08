@@ -13,6 +13,20 @@ $monospace-font-family: "Source Code Pro", Menlo, Consolas, Monaco, "Courier New
 
 @import "so-simple";
 
+.animated {
+	// animation-duration: .5s;
+}
+
+.site-nav ul {
+	display: block;
+	border-radius: 0;
+}
+
+.site-nav a:hover {
+	border-color: black;
+	transform: translateY(1px);
+	text-decoration: underline;
+}
 
 // .entry-title {
 // 	font-style: normal;

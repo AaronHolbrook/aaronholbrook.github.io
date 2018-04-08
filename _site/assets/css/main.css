@@ -2609,3 +2609,12 @@ a img.align-left {
 
 .responsive-embed-1by1::before {
   padding-top: 100%; }
+
+.site-nav ul {
+  display: block;
+  border-radius: 0; }
+
+.site-nav a:hover {
+  border-color: black;
+  transform: translateY(1px);
+  text-decoration: underline; }
