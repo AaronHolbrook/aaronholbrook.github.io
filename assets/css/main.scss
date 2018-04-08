@@ -5,4 +5,20 @@ sitemap: false
 
 @charset "utf-8";
 
+/* Font Families */
+$serif-font-family: "Raleway", serif !default;
+$sans-serif-font-family: "Tajawal", sans-serif !default;
+$monospace-font-family: "Source Code Pro", Menlo, Consolas, Monaco, "Courier New", Courier, monospace !default;
+
+
 @import "so-simple";
+
+
+// .entry-title {
+// 	font-style: normal;
+// }
+// .page-title {
+// 	// @include fluid-type($min-vw, $max-vw, 32px, 40px);
+// 	font-style: normal;
+// }
+

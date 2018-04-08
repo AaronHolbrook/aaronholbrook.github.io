@@ -134,6 +134,11 @@ var store = [{
         "tags": [],
         "url": "http://localhost:4000/2018/02/25/hidden-post.html"
       },{
+        "title": "Checking PHP Syntax Highlighting",
+        "excerpt":"echo 'hello world';foreach ( $tests as $test ) { var_dump( $test );}function test( $param = 1, $param2 = false ) { return false;}Here is where we can write some text explaining the next bit. Bushwick vice seitan, raw denim fixie dolore ad mollit. Seitan meh direct trade iPhone drinking vinegar...","categories": [],
+        "tags": ["code","syntax highlighting"],
+        "url": "http://localhost:4000/2018/04/07/checking-php-syntax-highlighting.html"
+      },{
         "title": "Chocolate Chip Cookies",
         "excerpt":"A chocolate chip cookie is a drop cookie that originated in the United States and features chocolate chips as its distinguishing ingredient. The traditional recipe combines a dough composed of butter and both brown and white sugar with semi-sweet chocolate chips. Variations include recipes with other types of chocolate as...","categories": [],
         "tags": [],
