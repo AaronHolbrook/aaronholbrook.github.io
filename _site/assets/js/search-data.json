@@ -1,4 +1,9 @@
 var store = [{
+        "title": "My Web Design Workflow",
+        "excerpt":"hifiDesign over on Reddit asked the question of how to use WordPress and SVN (or git in this case). Here is my more extended answer: I develop primarily on two mac computers, synced via DropBox. For local development I use MAMP. I start by locally installing the latest version of...","categories": [],
+        "tags": [],
+        "url": "http://localhost:4000/2011/02/02/my-web-design-workflow.html"
+      },{
         "title": "Chocolate Chip Cookies",
         "excerpt":"A chocolate chip cookie is a drop cookie that originated in the United States and features chocolate chips as its distinguishing ingredient. The traditional recipe combines a dough composed of butter and both brown and white sugar with semi-sweet chocolate chips. Variations include recipes with other types of chocolate as...","categories": [],
         "tags": [],
