@@ -18,4 +18,4 @@ This helps to:
 	<li>makes your code easier to debug</li>
 </ul>
 
-{% include responsive-embed url="https://www.youtube.com/watch?v=E0Eph_Cv7SA" %}
+{% include responsive-embed url="https://www.youtube.com/embed/E0Eph_Cv7SA" %}

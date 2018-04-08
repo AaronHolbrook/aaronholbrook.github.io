@@ -16,7 +16,7 @@ Git Subtrees allow you to track and update a repo within a repo without the head
 
 For a more in depth read on what / why - check out Vinicius' awesome <a href="https://medium.com/medium-eng/how-we-modularized-mediums-ios-codebase-8f8f26965c76">article</a>.
 
-{% include responsive-embed url="http://www.youtube.com/watch?v=E7YWeRFHpXg" %}
+{% include responsive-embed url="http://www.youtube.com/embed/E7YWeRFHpXg" %}
 
 <h2>Setup</h2>
 Add remote to repo:

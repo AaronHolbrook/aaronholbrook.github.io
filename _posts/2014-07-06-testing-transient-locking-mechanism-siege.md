@@ -17,4 +17,4 @@ I recorded a quick screencast that shows me walking through my testing of the tr
 
 Enjoy!
 
-{% include responsive-embed url="https://www.youtube.com/watch?v=yKxwlqZMVeo" %}
+{% include responsive-embed url="https://www.youtube.com/embed/yKxwlqZMVeo" %}

@@ -35,7 +35,7 @@ Things I wouldn't recommend doing:
 * Being lax with permissions on a server. Obviously this is never a good idea, but I would be sure that your folder / file permissions are up to snuff (or strange files may be loaded)
 
 ## Video Walkthrough
-{% include responsive-embed url="https://www.youtube.com/watch?v=NZtwcdIcHZ4" %}
+{% include responsive-embed url="https://www.youtube.com/embed/NZtwcdIcHZ4" %}
 
 ## Disclaimer
 Be aware that this may not be the right choice for your project. Please be fully aware of what this plugin does and how it works.

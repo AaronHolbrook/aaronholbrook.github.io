@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-04-08T00:28:27-05:00</updated><id>http://localhost:4000/</id><title type="html">Holbrook, Inc.</title><subtitle>:zap: Things I've learned. Stuff that matters. :100:</subtitle><author><name>Aaron Holbrook</name></author><entry><title type="html">Programmatically clear your WP Engine cache</title><link href="http://localhost:4000/programmatically-clear-wp-engine-cache" rel="alternate" type="text/html" title="Programmatically clear your WP Engine cache" /><published>2017-06-13T00:00:00-05:00</published><updated>2017-06-13T00:00:00-05:00</updated><id>http://localhost:4000/programmatically-clear-wp-engine-cache</id><content type="html" xml:base="http://localhost:4000/programmatically-clear-wp-engine-cache">&lt;p&gt;In my desire to create a better process for building and deploying at &lt;a href=&quot;http://zeek.com&quot;&gt;Zeek&lt;/a&gt;, I recently hit a road bump while trying to perform automatic visual regression testing immediately after deployment.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-04-08T00:31:27-05:00</updated><id>http://localhost:4000/</id><title type="html">Holbrook, Inc.</title><subtitle>:zap: Things I've learned. Stuff that matters. :100:</subtitle><author><name>Aaron Holbrook</name></author><entry><title type="html">Programmatically clear your WP Engine cache</title><link href="http://localhost:4000/programmatically-clear-wp-engine-cache" rel="alternate" type="text/html" title="Programmatically clear your WP Engine cache" /><published>2017-06-13T00:00:00-05:00</published><updated>2017-06-13T00:00:00-05:00</updated><id>http://localhost:4000/programmatically-clear-wp-engine-cache</id><content type="html" xml:base="http://localhost:4000/programmatically-clear-wp-engine-cache">&lt;p&gt;In my desire to create a better process for building and deploying at &lt;a href=&quot;http://zeek.com&quot;&gt;Zeek&lt;/a&gt;, I recently hit a road bump while trying to perform automatic visual regression testing immediately after deployment.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/wpengine.png&quot; alt=&quot;center-aligned-image&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
@@ -55,7 +55,7 @@
 
 &lt;h2 id=&quot;video-walkthrough&quot;&gt;Video Walkthrough&lt;/h2&gt;
 &lt;div class=&quot;responsive-embed responsive-embed-16by9&quot;&gt;
-  &lt;iframe src=&quot;https://www.youtube.com/watch?v=NZtwcdIcHZ4&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/NZtwcdIcHZ4&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 &lt;h2 id=&quot;disclaimer&quot;&gt;Disclaimer&lt;/h2&gt;
@@ -85,19 +85,19 @@
 &lt;/ul&gt;
 
 &lt;div class=&quot;responsive-embed responsive-embed-16by9&quot;&gt;
-  &lt;iframe src=&quot;https://www.youtube.com/watch?v=E0Eph_Cv7SA&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/E0Eph_Cv7SA&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">Make your code simpler to read and simpler to debug by breaking apart your conditional statements and exiting the function whenever possible.</summary></entry><entry><title type="html">Developing With Composer</title><link href="http://localhost:4000/developing-with-composer" rel="alternate" type="text/html" title="Developing With Composer" /><published>2015-03-06T00:00:00-06:00</published><updated>2015-03-06T00:00:00-06:00</updated><id>http://localhost:4000/developing-with-composer</id><content type="html" xml:base="http://localhost:4000/developing-with-composer">&lt;p&gt;Did you know you can not only use Composer to manage dependencies, but actually develop a package alongside your dependencies?&lt;/p&gt;
 
 &lt;p&gt;It’s called &lt;a href=&quot;https://getcomposer.org/doc/03-cli.md#install&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;--prefer-source&lt;/code&gt;&lt;/a&gt; and boy is it neat.&lt;/p&gt;
 
 &lt;p&gt;The gist of it is this: you define a repository and require the package as you would for a normal dependency, but when you go to run &lt;code class=&quot;highlighter-rouge&quot;&gt;composer install&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;composer update&lt;/code&gt; you pass the flag &lt;code class=&quot;highlighter-rouge&quot;&gt;--prefer-source&lt;/code&gt; along with it.&lt;/p&gt;
 
-&lt;p&gt;This brings down the entire repo of the package, and provided you have access to commit to that repo, you can easily work inside the package and push changes up just as if you were working within a submodule or &lt;a href=&quot;http://www.youtube.com/watch?v=E7YWeRFHpXg&quot;&gt;subtree&lt;/a&gt; (an avenue I explored briefly before discovering this method).&lt;/p&gt;
+&lt;p&gt;This brings down the entire repo of the package, and provided you have access to commit to that repo, you can easily work inside the package and push changes up just as if you were working within a submodule or &lt;a href=&quot;http://www.youtube.com/embed/E7YWeRFHpXg&quot;&gt;subtree&lt;/a&gt; (an avenue I explored briefly before discovering this method).&lt;/p&gt;
 
 &lt;p&gt;I’ve recorded a fairly short (10 min) screencast of how to include a package from a private github repository, autoload the main file and use &lt;code class=&quot;highlighter-rouge&quot;&gt;--prefer-source&lt;/code&gt; to be able to make changes directly within the package.&lt;/p&gt;
 
 &lt;div class=&quot;responsive-embed responsive-embed-16by9&quot;&gt;
-  &lt;iframe src=&quot;https://www.youtube.com/watch?v=fBJ5_7i06TY&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/fBJ5_7i06TY&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">Did you know you can not only use Composer to manage dependencies, but actually develop a package alongside your dependencies?</summary></entry><entry><title type="html">Git Subtrees - A Primer</title><link href="http://localhost:4000/git-subtrees-primer" rel="alternate" type="text/html" title="Git Subtrees - A Primer" /><published>2015-02-19T00:00:00-06:00</published><updated>2015-02-19T00:00:00-06:00</updated><id>http://localhost:4000/git-subtrees-primer</id><content type="html" xml:base="http://localhost:4000/git-subtrees-primer">&lt;h2&gt;Problem&lt;/h2&gt;
 
 &lt;p&gt;Difficult to modularize code and maintain separate repos. Submodules are difficult or problematic to use.&lt;/p&gt;
@@ -108,7 +108,7 @@
 &lt;p&gt;For a more in depth read on what / why - check out Vinicius’ awesome &lt;a href=&quot;https://medium.com/medium-eng/how-we-modularized-mediums-ios-codebase-8f8f26965c76&quot;&gt;article&lt;/a&gt;.&lt;/p&gt;
 
 &lt;div class=&quot;responsive-embed responsive-embed-16by9&quot;&gt;
-  &lt;iframe src=&quot;http://www.youtube.com/watch?v=E7YWeRFHpXg&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&quot;http://www.youtube.com/embed/E7YWeRFHpXg&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 &lt;h2&gt;Setup&lt;/h2&gt;
@@ -143,7 +143,7 @@
 &lt;p&gt;Enjoy!&lt;/p&gt;
 
 &lt;div class=&quot;responsive-embed responsive-embed-16by9&quot;&gt;
-  &lt;iframe src=&quot;https://www.youtube.com/watch?v=yKxwlqZMVeo&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/embed/yKxwlqZMVeo&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">When working with caching strategies, it’s important to step through your invalidation strategies. Namely, thinking through at what point does the data that you’re caching get regenerated, how does it get regenerated and who is regenerating it. It could be regenerated any time a new post is published, on a save_post hook by an author or admin OR it might need to be regenerated every 15 minutes by anyone hitting the front page.</summary></entry><entry><title type="html">WordPress Permissions Update Error [RESOLVED]</title><link href="http://localhost:4000/wordpress-permissions-update-error-resolved" rel="alternate" type="text/html" title="WordPress Permissions Update Error [RESOLVED]" /><published>2014-05-31T00:00:00-05:00</published><updated>2014-05-31T00:00:00-05:00</updated><id>http://localhost:4000/wordpress-permissions-update-error-resolved</id><content type="html" xml:base="http://localhost:4000/wordpress-permissions-update-error-resolved">&lt;p&gt;Recently I ran into an issue where an installation of WordPress that had never had any issues updating stopped being able to update via the admin update button.&lt;/p&gt;
 
 &lt;p&gt;Specifically these were the errors I would see:&lt;/p&gt;
