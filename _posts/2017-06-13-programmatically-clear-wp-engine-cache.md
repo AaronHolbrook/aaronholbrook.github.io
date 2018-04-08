@@ -1,6 +1,6 @@
 ---
 title: "Programmatically clear your WP Engine cache"
-permalink: "programmatically-clear-wp-engine-cache"
+permalink: "/programmatically-clear-wp-engine-cache/"
 categories:
   - Server
   - WordPress

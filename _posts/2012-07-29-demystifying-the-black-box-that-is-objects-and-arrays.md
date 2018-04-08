@@ -1,6 +1,6 @@
 ---
 title: "Demystifying the black box that is objects and arrays"
-permalink: "demystifying-the-black-box-that-is-objects-and-arrays"
+permalink: "/demystifying-the-black-box-that-is-objects-and-arrays/"
 categories:
   - Programming
   - PHP

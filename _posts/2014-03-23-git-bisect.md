@@ -1,6 +1,6 @@
 ---
 title: "Git Bisect"
-permalink: "troubleshooting-git-bisect/"
+permalink: "/troubleshooting-git-bisect/"
 categories:
   - Git
   - Programming
@@ -20,7 +20,7 @@ git bisect start
 
 Now since, we already know the bug is present, let's tell `git bisect` that this commit is `bad`
 
-```php
+```bash
 git bisect bad
 ```
 
@@ -30,7 +30,7 @@ So let's find a good commit (check it out and test to see if the bug is still pr
 
 We can now tell `git bisect` that this commit is `good`.
 
-```php
+```bash
 git bisect good
 ```
 

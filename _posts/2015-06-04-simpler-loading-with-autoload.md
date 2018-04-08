@@ -1,6 +1,6 @@
 ---
 title: "Simpler loading with Autoload!"
-permalink: "simpler-loading-with-autoload"
+permalink: "/simpler-loading-with-autoload/"
 categories:
   - Programming
   - PHP

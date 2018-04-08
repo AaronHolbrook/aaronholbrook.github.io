@@ -1,6 +1,6 @@
 ---
 title: "WordPress Permissions Update Error [RESOLVED]"
-permalink: "wordpress-permissions-update-error-resolved"
+permalink: "/wordpress-permissions-update-error-resolved/"
 categories:
   - WordPress
   - Server

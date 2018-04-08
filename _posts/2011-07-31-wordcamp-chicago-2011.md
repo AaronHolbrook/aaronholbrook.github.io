@@ -1,6 +1,6 @@
 ---
 title: "WordCamp Chicago 2011"
-permalink: "wordcamp-chicago-2011"
+permalink: "/wordcamp-chicago-2011/"
 categories:
   - WordPress
   - WordCamp

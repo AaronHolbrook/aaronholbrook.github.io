@@ -1,6 +1,6 @@
 ---
 title: "Git Subtrees - A Primer"
-permalink: "git-subtrees-primer"
+permalink: "/git-subtrees-primer/"
 excerpt: "What are subtrees, why are they useful and how can they be used?"
 categories:
   - Screencast

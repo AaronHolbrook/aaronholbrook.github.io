@@ -1,6 +1,6 @@
 ---
 title: "WordCamp Milwaukee 2012, slides!"
-permalink: "wordcamp-milwaukee-2012-slides"
+permalink: "/wordcamp-milwaukee-2012-slides/"
 categories:
   - Talks
   - WordPress

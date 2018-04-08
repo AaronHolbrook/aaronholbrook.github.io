@@ -1,6 +1,6 @@
 ---
 title: "Auto-update version of css"
-permalink: "auto-update-version-of-css"
+permalink: "/auto-update-version-of-css/"
 categories:
   - WordPress
   - Programming

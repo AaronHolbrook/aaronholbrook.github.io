@@ -1,6 +1,7 @@
 ---
 title: "I've Joined 10up!"
-permalink: "im-joining-10up-2"
+permalink: "/ive-joined-10up/"
+redirect_from: "/im-joining-10up-2/"
 image:
   path: /images/joined-10up.png
 categories:

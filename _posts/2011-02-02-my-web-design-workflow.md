@@ -1,6 +1,6 @@
 ---
 title: "My Web Design Workflow"
-permalink: "my-web-design-workflow"
+permalink: "/my-web-design-workflow/"
 categories:
   - Process
 elements:

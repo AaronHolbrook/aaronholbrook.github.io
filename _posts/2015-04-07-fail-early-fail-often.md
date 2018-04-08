@@ -1,6 +1,6 @@
 ---
 title: "Fail Early, Fail Often"
-permalink: "fail-early-fail-often"
+permalink: "/fail-early-fail-often/"
 categories:
   - Screencast
   - Programming

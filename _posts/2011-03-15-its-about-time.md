@@ -1,6 +1,6 @@
 ---
 title: "It's about time"
-permalink: "its-about-time"
+permalink: "/its-about-time/"
 categories:
   - Aside
 ---

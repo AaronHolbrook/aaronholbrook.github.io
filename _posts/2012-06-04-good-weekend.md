@@ -1,6 +1,6 @@
 ---
 title: "Good weekend"
-permalink: "good-weekend"
+permalink: "/good-weekend/"
 categories:
   - WordPress
   - WordCamp

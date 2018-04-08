@@ -1,6 +1,6 @@
 ---
 title: "WordPress Template Hierarchy Explained"
-permalink: "wordpress-template-hierarchy-explained"
+permalink: "/wordpress-template-hierarchy-explained/"
 categories:
   - WordPress
   - Programming

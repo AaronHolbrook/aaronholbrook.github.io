@@ -1,6 +1,6 @@
 ---
 title: "Full listing of all WordPress functions"
-permalink: "full-listing-of-all-wordpress-functions"
+permalink: "/full-listing-of-all-wordpress-functions/"
 categories:
   - WordPress
   - Programming

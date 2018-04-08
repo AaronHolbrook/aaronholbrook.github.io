@@ -1,6 +1,6 @@
 ---
 title: "Screencast: Intro to Git"
-permalink: "screencast-01-intro-to-git"
+permalink: "/screencast-01-intro-to-git/"
 categories:
   - Programming
   - Screencast

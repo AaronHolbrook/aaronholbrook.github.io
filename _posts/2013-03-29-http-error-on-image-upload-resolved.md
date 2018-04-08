@@ -1,6 +1,6 @@
 ---
 title: "HTTP Error on Image Upload [RESOLVED]"
-permalink: "http-error-on-image-upload-resolved"
+permalink: "/http-error-on-image-upload-resolved/"
 categories:
   - WordPress
   - Error

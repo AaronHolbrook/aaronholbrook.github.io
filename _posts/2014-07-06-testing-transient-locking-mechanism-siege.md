@@ -1,6 +1,6 @@
 ---
 title: "Testing a Transient Locking Mechanism with Siege"
-permalink: "testing-transient-locking-mechanism-siege"
+permalink: "/testing-transient-locking-mechanism-siege/"
 categories:
   - WordPress
   - Programming

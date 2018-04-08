@@ -1,6 +1,6 @@
 ---
 title: "My thoughts on WordCamp Grand Rapids 2012"
-permalink: "my-thoughts-on-wordcamp-grand-rapids-2012"
+permalink: "/my-thoughts-on-wordcamp-grand-rapids-2012/"
 categories:
   - Aside
   - WordCamp

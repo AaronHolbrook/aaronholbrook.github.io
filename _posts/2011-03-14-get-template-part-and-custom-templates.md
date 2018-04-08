@@ -1,6 +1,6 @@
 ---
 title: "get_template_part and Custom Templates"
-permalink: "get_template_part-and-custom-templates"
+permalink: "/get_template_part-and-custom-templates/"
 categories:
   - WordPress
   - Programming

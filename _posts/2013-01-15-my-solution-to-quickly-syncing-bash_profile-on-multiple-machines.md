@@ -1,6 +1,6 @@
 ---
 title: "My solution to quickly syncing .bash_profile on multiple machines"
-permalink: "my-solution-to-quickly-syncing-bash_profile-on-multiple-machines"
+permalink: "/my-solution-to-quickly-syncing-bash_profile-on-multiple-machines/"
 categories:
   - Programming
   - Linux

@@ -1,6 +1,6 @@
 ---
 title: "Adding a redirect link from a post (or page)"
-permalink: "adding-a-redirect-link-from-a-post-or-page"
+permalink: "/adding-a-redirect-link-from-a-post-or-page/"
 categories:
   - WordPress
   - Programming

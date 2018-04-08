@@ -1,6 +1,6 @@
 ---
 title: "New plugin: Seeder"
-permalink: "new-plugin-seeder"
+permalink: "/new-plugin-seeder/"
 categories:
   - WordPress
   - Plugin

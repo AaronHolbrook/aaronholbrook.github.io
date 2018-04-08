@@ -1,6 +1,6 @@
 ---
 title: "Developing With Composer"
-permalink: "developing-with-composer"
+permalink: "/developing-with-composer/"
 categories:
   - Screencast
   - Programming

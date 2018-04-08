@@ -1,6 +1,6 @@
 ---
 title: "Displaying a custom header based on URL"
-permalink: "displaying-a-custom-header-based-on-url"
+permalink: "/displaying-a-custom-header-based-on-url/"
 categories:
   - WordPress
   - Programming

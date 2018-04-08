@@ -1,6 +1,6 @@
 ---
 title: "Debugging server problems step by step"
-permalink: "debugging-server-problems-step-by-step"
+permalink: "/debugging-server-problems-step-by-step/"
 categories:
   - Server
   - Linux

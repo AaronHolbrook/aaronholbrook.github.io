@@ -6,6 +6,7 @@ url: https://aaronholbrook.github.io
 logo: "/images/a7-dark-on-light.png"
 date_format: "%B %-d, %Y"
 read_time: true
+permalink: /:title/
 words_per_minute: 200
 mathjax: true
 google_fonts:

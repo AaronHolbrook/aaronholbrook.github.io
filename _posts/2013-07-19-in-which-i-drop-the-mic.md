@@ -1,6 +1,6 @@
 ---
 title: "In Which I Drop the Mic"
-permalink: "in-which-i-drop-the-mic"
+permalink: "/in-which-i-drop-the-mic/"
 categories:
   - WordCamp
 ---

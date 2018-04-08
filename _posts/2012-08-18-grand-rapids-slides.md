@@ -1,6 +1,6 @@
 ---
 title: "Grand Rapids slides!"
-permalink: "grand-rapids-slides"
+permalink: "/grand-rapids-slides/"
 categories:
   - WordPress
   - WordCamp

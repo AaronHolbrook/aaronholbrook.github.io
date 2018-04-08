@@ -1,6 +1,6 @@
 ---
 title: "Incremental Array Changes"
-permalink: "incremental-array-changes"
+permalink: "/incremental-array-changes/"
 categories:
   - Programming
   - PHP
