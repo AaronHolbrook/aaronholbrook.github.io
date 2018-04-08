@@ -1,9 +1,9 @@
 locale: en-US
-title: "Holbrook, Inc."
-description: ":zap: Things I've learned. Stuff that matters. :100:"
+title: "Aaron Holbrook"
+description: "Musings, learnings, and creations."
 baseurl: ""
-url: https://aaronholbrook.github.io
 logo: "/images/a7-dark-on-light.png"
+url: https://aaronjholbrook.com
 date_format: "%B %-d, %Y"
 read_time: true
 permalink: /:title/
@@ -15,7 +15,7 @@ google_fonts:
   - name: "Raleway"
     weights: "400,400i,500,500i"
   - name: "Source Code Pro"
-    weights: "400,500"
+    weights: "400"
 google_analytics: "UA-24616230-1"
 disqus:
   shortname: "aaronjholbrook"
