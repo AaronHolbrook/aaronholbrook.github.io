@@ -1,6 +1,6 @@
 ---
 title: "Git Bisect"
-permalink: "troubleshooting-git-bisect"
+permalink: "troubleshooting-git-bisect/"
 categories:
   - Git
   - Programming

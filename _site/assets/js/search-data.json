@@ -107,7 +107,7 @@ var store = [{
         "title": "Git Bisect",
         "excerpt":"One of the lowest hanging fruits to learn is how to fix code regressions quickly and easily with git bisect. Let’s say you have some website that has a bug in a feature that, previously, was working fine (and that this is not all new functionality). We can actually use our...","categories": ["Git","Programming"],
         "tags": [],
-        "url": "http://localhost:4000/troubleshooting-git-bisect"
+        "url": "http://localhost:4000/troubleshooting-git-bisect/"
       },{
         "title": "WordPress Permissions Update Error [RESOLVED]",
         "excerpt":"Recently I ran into an issue where an installation of WordPress that had never had any issues updating stopped being able to update via the admin update button. Specifically these were the errors I would see: Unpacking the update...The update cannot be installed because we will be unable to copy...","categories": ["WordPress","Server"],
