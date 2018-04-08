@@ -57,11 +57,15 @@ tag_archive_path: "/tags/#"
 #   - vendor/ruby/
 
 plugins:
+  - jekyll-redirect-from
   - jemoji
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-paginate
+
+whitelist:
+  - jekyll-redirect-from
 
 # Collections
 collections:
