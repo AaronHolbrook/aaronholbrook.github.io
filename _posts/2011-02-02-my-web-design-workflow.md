@@ -1,5 +1,12 @@
 ---
 title: "My Web Design Workflow"
+permalink: "my-web-design-workflow"
+categories:
+  - Process
+elements:
+  - process
+  - workflow
+  - tools
 ---
 <a href="http://www.reddit.com/user/hifiDesign">hifiDesign</a> over on <a href="http://www.reddit.com/r/Wordpress/comments/fcoqm/request_wordpress_svn_workflow/">Reddit</a> asked the question of how to use WordPress and SVN (or git in this case). Here is my more extended answer:
 

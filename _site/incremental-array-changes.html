@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Incremental Array Changes | Holbrook, Inc.</title>
+<meta name="generator" content="Jekyll v3.7.3">
+<meta property="og:title" content="Incremental Array Changes">
+<meta name="author" content="Aaron Holbrook">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="Something that I’ve come across recently as I start to build dynamic queries is changing the arguments array ever so slightly.">
+<meta property="og:description" content="Something that I’ve come across recently as I start to build dynamic queries is changing the arguments array ever so slightly.">
+<link rel="canonical" href="http://localhost:4000/incremental-array-changes">
+<meta property="og:url" content="http://localhost:4000/incremental-array-changes">
+<meta property="og:site_name" content="Holbrook, Inc.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2012-07-22T00:00:00-05:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@aaronjholbrook">
+<meta name="twitter:creator" content="@aaronjholbrook">
+<script type="application/ld+json">
+{"description":"Something that I’ve come across recently as I start to build dynamic queries is changing the arguments array ever so slightly.","author":{"@type":"Person","name":"Aaron Holbrook"},"@type":"BlogPosting","url":"http://localhost:4000/incremental-array-changes","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/a7-dark-on-light.png"},"name":"Aaron Holbrook"},"headline":"Incremental Array Changes","dateModified":"2012-07-22T00:00:00-05:00","datePublished":"2012-07-22T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/incremental-array-changes"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tajawal:400,400i,700,700i%7CRaleway:400,400i,500,500i%7CSource+Code+Pro:400,500">
+  <link rel="alternate" type="application/atom+xml" title="Holbrook, Inc." href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  incremental-array-changes">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav">
+      <ul>
+<li><a href="/">Home</a></li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/about/">About</a></li>
+</ul>
+    </nav>
+  </div>
+<!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+      <a href="/" class="site-logo" rel="home" title="Holbrook, Inc.">
+        <img src="/images/a7-dark-on-light.png" class="site-logo-img animated fadeInDown" alt="Holbrook, Inc.">
+      </a>
+    
+    
+      <h1 class="site-title animated fadeIn"><a href="/">Holbrook, Inc.</a></h1>
+      <p class="site-description animated fadeIn" itemprop="description">Stuff that matters. <img class="emoji" title=":+1:" alt=":+1:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f44d.png" height="20" width="20"></p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">Incremental Array Changes
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author">
+<img src="/images/aaron-holbrook-photo.jpg" class="author-avatar u-photo" alt="Aaron Holbrook"><div class="author-info">
+<div class="author-name">
+        <em>by</em> <span class="p-name">Aaron Holbrook</span>
+      </div>
+<ul class="author-links">
+<li class="author-link">
+            <a class="u-url" rel="me" href="https://twitter.com/aaronjholbrook"><i class="fab fa-twitter-square fa-lg" title="Twitter"></i></a>
+          </li>
+<li class="author-link">
+            <a class="u-url" rel="me" href="https://github.com/aaronholbrook"><i class="fab fa-github-square fa-lg" title="GitHub"></i></a>
+          </li>
+</ul>
+
+<span class="read-time">2 min read</span>
+
+    <time class="page-date dt-published" datetime="2012-07-22T00:00:00-05:00"><a class="u-url" href="">July 22, 2012</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  <ul class="page-taxonomies">
+<li class="page-taxonomy"><a class="p-category" href="/categories/#programming" title="Pages filed under Programming">Programming</a></li>
+<li class="page-taxonomy"><a class="p-category" href="/categories/#php" title="Pages filed under PHP">PHP</a></li>
+  </ul>
+
+
+        
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>Something that I’ve come across recently as I start to build dynamic queries is changing the arguments array ever so slightly.</p>
+
+<p>At first I was doing this</p>
+
+<p>If featured posts:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$args</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+	<span class="s1">'post_type'</span>				<span class="o">=&gt;</span> <span class="s1">'charity'</span><span class="p">,</span>
+	<span class="s1">'order'</span>					<span class="o">=&gt;</span> <span class="s1">'ASC'</span><span class="p">,</span>
+	<span class="s1">'posts_per_page'</span>		<span class="o">=&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+	<span class="s1">'showposts'</span>				<span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+	<span class="s1">'tax_query'</span>				<span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+		<span class="s1">'taxonomy'</span>			<span class="o">=&gt;</span> <span class="s1">'charity-category'</span><span class="p">,</span>
+		<span class="s1">'field'</span>				<span class="o">=&gt;</span> <span class="s1">'slug'</span><span class="p">,</span>
+		<span class="s1">'terms'</span>				<span class="o">=&gt;</span> <span class="s1">'featured'</span>
+	<span class="p">))</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p>If not featured posts:</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$args</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+	<span class="s1">'post_type'</span>				<span class="o">=&gt;</span> <span class="s1">'charity'</span><span class="p">,</span>
+	<span class="s1">'order'</span>					<span class="o">=&gt;</span> <span class="s1">'ASC'</span><span class="p">,</span>
+	<span class="s1">'posts_per_page'</span>		<span class="o">=&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+	<span class="s1">'showposts'</span>				<span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p>After being frustrated by the redundancy and trying a couple different variations I discovered the correct way to push elements onto the <code class="highlighter-rouge">$args</code> array.</p>
+
+<p>This is the correct way to create incremental array changes for your array:</p>
+
+<p>First, declare all common attributes</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$args</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+	<span class="s1">'post_type'</span>				<span class="o">=&gt;</span> <span class="s1">'charity'</span><span class="p">,</span>
+	<span class="s1">'order'</span>					<span class="o">=&gt;</span> <span class="s1">'ASC'</span><span class="p">,</span>
+	<span class="s1">'posts_per_page'</span>		<span class="o">=&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">);</span>
+</code></pre></div></div>
+
+<p>If featured posts, declaring incrementally</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$args</span><span class="p">[</span><span class="s1">'showposts'</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nv">$args</span><span class="p">[</span><span class="s1">'tax_query'</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+		<span class="s1">'taxonomy'</span>			<span class="o">=&gt;</span> <span class="s1">'charity-category'</span><span class="p">,</span>
+		<span class="s1">'field'</span>				<span class="o">=&gt;</span> <span class="s1">'slug'</span><span class="p">,</span>
+		<span class="s1">'terms'</span>				<span class="o">=&gt;</span> <span class="s1">'featured'</span>
+<span class="p">));</span>
+</code></pre></div></div>
+<p>If not featured posts then we’re done!</p>
+
+<p>I thought at first you could simply push the array element (say <code class="highlighter-rouge">tax_query</code> which is actually an array itself), but that actually puts it at the wrong level in the <code class="highlighter-rouge">$args</code> array. Let’s take a look.</p>
+
+<p>Here’s the output from our first full array entry (using <a href="http://php.net/manual/en/function.var-dump.php">var_dump</a>):</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">array</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+  <span class="p">[</span><span class="s2">"post_type"</span><span class="p">]</span><span class="o">=&gt;</span>
+  <span class="nx">string</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="s2">"charity"</span>
+  <span class="p">[</span><span class="s2">"order"</span><span class="p">]</span><span class="o">=&gt;</span>
+  <span class="nx">string</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="s2">"ASC"</span>
+  <span class="p">[</span><span class="s2">"posts_per_page"</span><span class="p">]</span><span class="o">=&gt;</span>
+  <span class="nx">int</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+  <span class="p">[</span><span class="s2">"showposts"</span><span class="p">]</span><span class="o">=&gt;</span>
+  <span class="nx">int</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+  <span class="p">[</span><span class="s2">"tax_query"</span><span class="p">]</span><span class="o">=&gt;</span>
+  <span class="k">array</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=&gt;</span>
+    <span class="k">array</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+      <span class="p">[</span><span class="s2">"taxonomy"</span><span class="p">]</span><span class="o">=&gt;</span>
+      <span class="nx">string</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span> <span class="s2">"charity-category"</span>
+      <span class="p">[</span><span class="s2">"field"</span><span class="p">]</span><span class="o">=&gt;</span>
+      <span class="nx">string</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="s2">"slug"</span>
+      <span class="p">[</span><span class="s2">"terms"</span><span class="p">]</span><span class="o">=&gt;</span>
+      <span class="nx">string</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="s2">"featured"</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now, if we were to use the <code><a href="http://php.net/manual/en/function.array-push.php">array_push</a></code> method this is what we would get (assuming we’re pushing the <code>tax_query</code> array).</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">array</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+  <span class="p">[</span><span class="s2">"post_type"</span><span class="p">]</span><span class="o">=&gt;</span>
+  <span class="nx">string</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="s2">"charity"</span>
+  <span class="p">[</span><span class="s2">"order"</span><span class="p">]</span><span class="o">=&gt;</span>
+  <span class="nx">string</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="s2">"ASC"</span>
+  <span class="p">[</span><span class="s2">"posts_per_page"</span><span class="p">]</span><span class="o">=&gt;</span>
+  <span class="nx">int</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+  <span class="p">[</span><span class="s2">"showposts"</span><span class="p">]</span><span class="o">=&gt;</span>
+  <span class="nx">int</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+  <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=&gt;</span>
+  <span class="k">array</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">[</span><span class="s2">"tax_query"</span><span class="p">]</span><span class="o">=&gt;</span>
+    <span class="k">array</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+      <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=&gt;</span>
+      <span class="k">array</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">[</span><span class="s2">"taxonomy"</span><span class="p">]</span><span class="o">=&gt;</span>
+        <span class="nx">string</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span> <span class="s2">"charity-category"</span>
+        <span class="p">[</span><span class="s2">"field"</span><span class="p">]</span><span class="o">=&gt;</span>
+        <span class="nx">string</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="s2">"slug"</span>
+        <span class="p">[</span><span class="s2">"terms"</span><span class="p">]</span><span class="o">=&gt;</span>
+        <span class="nx">string</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="s2">"featured"</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>You can clearly see we’re off by a whole level at line 13. So the way around this is to just specify in the <code class="highlighter-rouge">array_push</code> the element.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$args</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+<span class="s1">'post_type'</span>				<span class="o">=&gt;</span> <span class="s1">'charity'</span><span class="p">,</span>
+<span class="s1">'order'</span>					<span class="o">=&gt;</span> <span class="s1">'ASC'</span><span class="p">,</span>
+<span class="s1">'posts_per_page'</span>	<span class="o">=&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+<span class="s1">'showposts'</span>				<span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+<span class="p">);</span>
+
+<span class="nv">$args</span><span class="p">[</span><span class="s1">'tax_query'</span><span class="p">]</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+	<span class="s1">'taxonomy'</span>			<span class="o">=&gt;</span> <span class="s1">'charity-category'</span><span class="p">,</span>
+	<span class="s1">'field'</span>				<span class="o">=&gt;</span> <span class="s1">'slug'</span><span class="p">,</span>
+	<span class="s1">'terms'</span>				<span class="o">=&gt;</span> <span class="s1">'featured'</span>
+<span class="p">));</span>
+</code></pre></div></div>
+
+<p>And the output:</p>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">array</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+  <span class="p">[</span><span class="s2">"post_type"</span><span class="p">]</span><span class="o">=&gt;</span>
+  <span class="nx">string</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span> <span class="s2">"charity"</span>
+  <span class="p">[</span><span class="s2">"order"</span><span class="p">]</span><span class="o">=&gt;</span>
+  <span class="nx">string</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="s2">"ASC"</span>
+  <span class="p">[</span><span class="s2">"posts_per_page"</span><span class="p">]</span><span class="o">=&gt;</span>
+  <span class="nx">int</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+  <span class="p">[</span><span class="s2">"showposts"</span><span class="p">]</span><span class="o">=&gt;</span>
+  <span class="nx">int</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+  <span class="p">[</span><span class="s2">"tax_query"</span><span class="p">]</span><span class="o">=&gt;</span>
+  <span class="k">array</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=&gt;</span>
+    <span class="k">array</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+      <span class="p">[</span><span class="s2">"taxonomy"</span><span class="p">]</span><span class="o">=&gt;</span>
+      <span class="nx">string</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span> <span class="s2">"charity-category"</span>
+      <span class="p">[</span><span class="s2">"field"</span><span class="p">]</span><span class="o">=&gt;</span>
+      <span class="nx">string</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="s2">"slug"</span>
+      <span class="p">[</span><span class="s2">"terms"</span><span class="p">]</span><span class="o">=&gt;</span>
+      <span class="nx">string</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span> <span class="s2">"featured"</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>As you can see this matches the array structure that we want.</p>
+
+<p>And there you have it! Incremental array changes - helpful when creating a dynamic query!</p>
+
+        </div>
+
+        
+          
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/good-weekend">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> Good weekend
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/demystifying-the-black-box-that-is-objects-and-arrays">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        Demystifying the black box that is objects and arrays
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons">
+<a class="social-icon" href="https://twitter.com/aaronjholbrook"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/aaronholbrook"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a>
+</div>
+<div class="copyright">
+    
+      <p>Powered by <img class="emoji" title=":coffee:" alt=":coffee:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2615.png" height="20" width="20"> and <img class="emoji" title=":heart:" alt=":heart:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2764.png" height="20" width="20"></p>
+
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+<!-- Thanks to Michael Rose for his So Simple Jekyll Theme-->
+</html>

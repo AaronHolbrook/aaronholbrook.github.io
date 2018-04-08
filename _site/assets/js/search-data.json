@@ -1,8 +1,73 @@
 var store = [{
         "title": "My Web Design Workflow",
-        "excerpt":"hifiDesign over on Reddit asked the question of how to use WordPress and SVN (or git in this case). Here is my more extended answer: I develop primarily on two mac computers, synced via DropBox. For local development I use MAMP. I start by locally installing the latest version of...","categories": [],
+        "excerpt":"hifiDesign over on Reddit asked the question of how to use WordPress and SVN (or git in this case). Here is my more extended answer: I develop primarily on two mac computers, synced via DropBox. For local development I use MAMP. I start by locally installing the latest version of...","categories": ["Process"],
         "tags": [],
-        "url": "http://localhost:4000/2011/02/02/my-web-design-workflow.html"
+        "url": "http://localhost:4000/my-web-design-workflow"
+      },{
+        "title": "Displaying a custom header based on URL",
+        "excerpt":"So I recently ran across a situation on Centegra’s website where I had set up our header image to show an image based on the section or area it’s in. This was working fine utilizing a custom get_ID_by_slug('slug-of-post') function I built to get the post ID. The problem with using...","categories": ["WordPress","Programming"],
+        "tags": [],
+        "url": "http://localhost:4000/displaying-a-custom-header-based-on-url"
+      },{
+        "title": "get_template_part and Custom Templates",
+        "excerpt":"In building the Centegra physician directory back in WordPress 3.0, there was no real way to use WordPress to display out a listing or archive of your custom posts. The temporary workaround solution was a little plugin I found called ‘Simple Custom Post Type Archives’. It worked well and all...","categories": ["WordPress","Programming"],
+        "tags": [],
+        "url": "http://localhost:4000/get_template_part-and-custom-templates"
+      },{
+        "title": "It's about time",
+        "excerpt":"Internet Explorer 9 If you have to use Internet Explorer, at least make sure you’re using the newest one. http://www.beautyoftheweb.com/ ","categories": ["Aside"],
+        "tags": [],
+        "url": "http://localhost:4000/its-about-time"
+      },{
+        "title": "Auto-update version of css",
+        "excerpt":"I just stumbled across this on Mark Jaquith’s blog. It’s a really handy way of getting around the automatic caching that happens to css files. &lt;link rel=\"stylesheet\" href=\"&lt;?php bloginfo('stylesheet_url'); echo '?' . filemtime( get_stylesheet_directory() . '/style.css'); ?&gt;\" type=\"text/css\" media=\"screen, projection\"Basically it uses the timestamp as the variable that changes. Anytime...","categories": ["WordPress","Programming"],
+        "tags": [],
+        "url": "http://localhost:4000/auto-update-version-of-css"
+      },{
+        "title": "Adding a redirect link from a post (or page)",
+        "excerpt":"I just had a client request that for his home page posts that were being displayed, have them link instead to a permanent page. The type of content that they were linking to was longer term and the posts that were being displayed were created just as excerpts. Not a...","categories": ["WordPress","Programming"],
+        "tags": [],
+        "url": "http://localhost:4000/adding-a-redirect-link-from-a-post-or-page"
+      },{
+        "title": "WordCamp Chicago 2011",
+        "excerpt":"So I just got back home from the first day of Chicago’s WordCamp 2011 held at the lovely Depaul University in downtown Chicago. Man, what a great experience - I just love the inspiration and the idea sharing that goes on at these conferences. Some highlights of the day were:...","categories": ["WordPress","WordCamp","Conference"],
+        "tags": [],
+        "url": "http://localhost:4000/wordcamp-chicago-2011"
+      },{
+        "title": "WordCamp Milwaukee 2012, slides!",
+        "excerpt":"Thanks to everyone who attended my session on WordPress and Version Control! I promised slides and unfortunately had a bit of a hiccup with bit.ly. Here are the slides: Feel free to comment or shoot me a message on twitter if you want to talk @aaronjholbrook. Update: slides are now up...","categories": ["Talks","WordPress","WordCamp","Git"],
+        "tags": [],
+        "url": "http://localhost:4000/wordcamp-milwaukee-2012-slides"
+      },{
+        "title": "Good weekend",
+        "excerpt":"Today was a good day. In fact, this weekend was a good weekend. I attended and spoke at the 2012 Milwaukee WordCamp. What an amazing time. I came inches from a swell of honeybees. I rode an antiquated lift elevator straight out of the 1900s. I met a famous cewebrity...","categories": ["WordPress","WordCamp","Aside","Reflection"],
+        "tags": [],
+        "url": "http://localhost:4000/good-weekend"
+      },{
+        "title": "Incremental Array Changes",
+        "excerpt":"Something that I’ve come across recently as I start to build dynamic queries is changing the arguments array ever so slightly. At first I was doing this If featured posts: $args = array( 'post_type' =&gt; 'charity', 'order' =&gt; 'ASC', 'posts_per_page' =&gt; -1, 'showposts' =&gt; 1, 'tax_query' =&gt; array(array( 'taxonomy' =&gt;...","categories": ["Programming","PHP"],
+        "tags": [],
+        "url": "http://localhost:4000/incremental-array-changes"
+      },{
+        "title": "Demystifying the black box that is objects and arrays",
+        "excerpt":"Something I hear all the time and that was initially the biggest learning for me was understanding the data and the structure of objects that we have to interact with. If you want to become a better programmer, you first need to understand what it is you’re trying to manipulate...","categories": ["Programming","PHP"],
+        "tags": [],
+        "url": "http://localhost:4000/demystifying-the-black-box-that-is-objects-and-arrays"
+      },{
+        "title": "Grand Rapids slides!",
+        "excerpt":"Here are my slides from my talk on WordPress and Version Control from WordCamp Grand Rapids 2012 August 18th. ","categories": ["WordPress","WordCamp","Talk"],
+        "tags": [],
+        "url": "http://localhost:4000/grand-rapids-slides"
+      },{
+        "title": "My thoughts on WordCamp Grand Rapids 2012",
+        "excerpt":"Some thoughts I had on my way home from WordCamp Grand Rapids 2012: A long car ride is better shared Even better: a long car is best shared by a fellow geek who you can learn lots from Pre-conference speaker parties are the best type of party Grand Rapids is...","categories": ["Aside","WordCamp","Reflection"],
+        "tags": [],
+        "url": "http://localhost:4000/my-thoughts-on-wordcamp-grand-rapids-2012"
+      },{
+        "title": "Screencast: Intro to Git",
+        "excerpt":"Thought it’d be nice to demo how to set up and get your own repository going with Git.   Let me know if you like the format, I’m thinking about doing some screencasts and would love feedback! ","categories": ["Programming","Screencast","Git"],
+        "tags": [],
+        "url": "http://localhost:4000/screencast-01-intro-to-git"
       },{
         "title": "Chocolate Chip Cookies",
         "excerpt":"A chocolate chip cookie is a drop cookie that originated in the United States and features chocolate chips as its distinguishing ingredient. The traditional recipe combines a dough composed of butter and both brown and white sugar with semi-sweet chocolate chips. Variations include recipes with other types of chocolate as...","categories": [],

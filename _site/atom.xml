@@ -1,56 +1,339 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-04-07T21:50:51-05:00</updated><id>http://localhost:4000/</id><title type="html">Holbrook, Inc.</title><subtitle>Stuff that matters. :+1:</subtitle><author><name>Aaron Holbrook</name></author><entry><title type="html">My Web Design Workflow</title><link href="http://localhost:4000/2011/02/02/my-web-design-workflow.html" rel="alternate" type="text/html" title="My Web Design Workflow" /><published>2011-02-02T00:00:00-06:00</published><updated>2011-02-02T00:00:00-06:00</updated><id>http://localhost:4000/2011/02/02/my-web-design-workflow</id><content type="html" xml:base="http://localhost:4000/2011/02/02/my-web-design-workflow.html">&lt;p&gt;&lt;a href=&quot;http://www.reddit.com/user/hifiDesign&quot;&gt;hifiDesign&lt;/a&gt; over on &lt;a href=&quot;http://www.reddit.com/r/Wordpress/comments/fcoqm/request_wordpress_svn_workflow/&quot;&gt;Reddit&lt;/a&gt; asked the question of how to use WordPress and SVN (or git in this case). Here is my more extended answer:&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-04-07T22:36:29-05:00</updated><id>http://localhost:4000/</id><title type="html">Holbrook, Inc.</title><subtitle>Stuff that matters. :+1:</subtitle><author><name>Aaron Holbrook</name></author><entry><title type="html">Screencast: Intro to Git</title><link href="http://localhost:4000/screencast-01-intro-to-git" rel="alternate" type="text/html" title="Screencast: Intro to Git" /><published>2012-09-10T00:00:00-05:00</published><updated>2012-09-10T00:00:00-05:00</updated><id>http://localhost:4000/screencast-intro-to-git</id><content type="html" xml:base="http://localhost:4000/screencast-01-intro-to-git">&lt;p&gt;Thought it’d be nice to demo how to set up and get your own repository going with Git.&lt;/p&gt;
 
-&lt;p&gt;I develop primarily on two mac computers, synced via DropBox.&lt;/p&gt;
+&lt;div class=&quot;responsive-embed responsive-embed-16by9&quot;&gt;
+  &lt;iframe src=&quot;http://www.youtube.com/watch?v=2bg2yVOl5Q0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
 
-&lt;p&gt;For local development I use MAMP.&lt;/p&gt;
+&lt;p&gt;Let me know if you like the format, I’m thinking about doing some screencasts and would love feedback!&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">Thought it’d be nice to demo how to set up and get your own repository going with Git.</summary></entry><entry><title type="html">My thoughts on WordCamp Grand Rapids 2012</title><link href="http://localhost:4000/my-thoughts-on-wordcamp-grand-rapids-2012" rel="alternate" type="text/html" title="My thoughts on WordCamp Grand Rapids 2012" /><published>2012-08-22T00:00:00-05:00</published><updated>2012-08-22T00:00:00-05:00</updated><id>http://localhost:4000/my-thoughts-on-grand-rapids-2012</id><content type="html" xml:base="http://localhost:4000/my-thoughts-on-wordcamp-grand-rapids-2012">&lt;p&gt;Some thoughts I had on my way home from WordCamp Grand Rapids 2012:&lt;/p&gt;
 
-&lt;p&gt;I start by locally installing the latest version of WordPress to a clean directory in DropBox. I usually set up a new DB in PhpMyAdmin and get rolling with the new install.&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;A long car ride is better shared&lt;/li&gt;
+	&lt;li&gt;Even better: a long car is best shared by a &lt;a title=&quot;Brad Parbs, Internet Rockstar&quot; href=&quot;http://bradparbs.com&quot;&gt;fellow geek&lt;/a&gt; who you can learn lots from&lt;/li&gt;
+	&lt;li&gt;Pre-conference speaker parties are the best type of party&lt;/li&gt;
+	&lt;li&gt;Grand Rapids is full of &lt;a title=&quot;Grand Rapids, Brewery Town&quot; href=&quot;https://maps.google.com/maps?q=brewery&amp;amp;hl=en&amp;amp;sll=42.96336,-85.668086&amp;amp;sspn=0.311537,0.541077&amp;amp;t=m&amp;amp;z=11&quot;&gt;breweries&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;These breweries contain lots of good food&lt;/li&gt;
+	&lt;li&gt;Don't leave your brand new macbook air box sitting on your car seat parked in a parking lot&lt;/li&gt;
+	&lt;li&gt;If you decide to ignore the previous rule then don't be surprised when someone has broken into your car and stolen your laptop&lt;/li&gt;
+	&lt;li&gt;&lt;a title=&quot;Brian Richards, Startbox founder&quot; href=&quot;http://rzen.net/&quot;&gt;Brian Richards&lt;/a&gt; (&lt;a title=&quot;@rzen&quot; href=&quot;https://twitter.com/rzen&quot;&gt;@rzen&lt;/a&gt;) knows how to make a brilliant conference badge/book&lt;/li&gt;
+	&lt;li&gt;&lt;a title=&quot;Ryan Imel, wpcandy&quot; href=&quot;http://ryanimel.com/&quot;&gt;Ryan Imel&lt;/a&gt; (&lt;a title=&quot;@ryanimel&quot; href=&quot;http://twitter.com/ryanimel&quot;&gt;@ryanimel&lt;/a&gt;) puts on a hell of show&lt;/li&gt;
+	&lt;li&gt;Brian Richards also knows how to organize &lt;a title=&quot;Grand Rapids WordCamp 2012&quot; href=&quot;http://2012.grandrapids.wordcamp.org/&quot;&gt;one hell of a conference&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href=&quot;https://twitter.com/#!/search/?q=%23bathroomnirvana&amp;amp;src=hash&quot;&gt;#bathroomnirvana&lt;/a&gt; is a thing&lt;/li&gt;
+	&lt;li&gt;I should really time out my speech a little better so I don't finish at the 13 minute mark&lt;/li&gt;
+	&lt;li&gt;Free hoodies and shirts are really awesome&lt;/li&gt;
+	&lt;li&gt;Mark Jaquith is really tall!&lt;/li&gt;
+	&lt;li&gt;I think &lt;a title=&quot;John James Jacoby, BuddyPress Lead&quot; href=&quot;https://twitter.com/jjj&quot;&gt;@jjj&lt;/a&gt; &amp;amp; &lt;a title=&quot;Mark Jaquith, core WordPress developer&quot; href=&quot;https://twitter.com/markjaquith&quot;&gt;@jaquith&lt;/a&gt; were literally the giants on who's shoulders we stand on&lt;/li&gt;
+	&lt;li&gt;&lt;a title=&quot;Andy Stratton, teddy bear&quot; href=&quot;https://twitter.com/theandystratton&quot;&gt;@theandystratton&lt;/a&gt; is a really nice guy (you know underneath the hard exterior)&lt;/li&gt;
+	&lt;li&gt;Constant stomache butterflies is not a fun way to spend 5+ days&lt;/li&gt;
+	&lt;li&gt;meeting my peers in the WP community is such an inspiring experience&lt;/li&gt;
+	&lt;li&gt;I continue to be impressed by how much utility there is in twitter&lt;/li&gt;
+	&lt;li&gt;Most especially at a gathering of people (like at a conference)&lt;/li&gt;
+	&lt;li&gt;To be so closely tied to people digitally and for that to be completely irrelevant to physical proximity is a wonder that my brain is still trying to decipher&lt;/li&gt;
+	&lt;li&gt;&lt;del&gt;Conferences&lt;/del&gt; WordCamps are insanely amazing!&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">Some thoughts I had on my way home from WordCamp Grand Rapids 2012:</summary></entry><entry><title type="html">Grand Rapids slides!</title><link href="http://localhost:4000/grand-rapids-slides" rel="alternate" type="text/html" title="Grand Rapids slides!" /><published>2012-08-18T00:00:00-05:00</published><updated>2012-08-18T00:00:00-05:00</updated><id>http://localhost:4000/grand-rapids-slides</id><content type="html" xml:base="http://localhost:4000/grand-rapids-slides">&lt;p&gt;Here are my slides from my talk on WordPress and Version Control from WordCamp Grand Rapids 2012 August 18th.&lt;/p&gt;
 
-&lt;p&gt;Once the install is up and running it’s time to work on the theme.&lt;/p&gt;
+&lt;script async=&quot;&quot; class=&quot;speakerdeck-embed&quot; data-id=&quot;50356cf4eca5f60002003eef&quot; data-ratio=&quot;1.33333333333333&quot; src=&quot;//speakerdeck.com/assets/embed.js&quot;&gt;&lt;/script&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">Here are my slides from my talk on WordPress and Version Control from WordCamp Grand Rapids 2012 August 18th.</summary></entry><entry><title type="html">Demystifying the black box that is objects and arrays</title><link href="http://localhost:4000/demystifying-the-black-box-that-is-objects-and-arrays" rel="alternate" type="text/html" title="Demystifying the black box that is objects and arrays" /><published>2012-07-29T00:00:00-05:00</published><updated>2012-07-29T00:00:00-05:00</updated><id>http://localhost:4000/demystifying-the-black-box-that-is-objects-and-arrays</id><content type="html" xml:base="http://localhost:4000/demystifying-the-black-box-that-is-objects-and-arrays">&lt;p&gt;Something I hear all the time and that was initially the biggest learning for me was understanding the data and the structure of objects that we have to interact with.&lt;/p&gt;
 
-&lt;p&gt;I initialize a git repository.&lt;/p&gt;
+&lt;p&gt;If you want to become a better programmer, you first need to understand what it is you’re trying to manipulate before you can try to manipulate. Imagine trying to solve a Rubik’s Cube with a blindfold. That is essentially what you’re trying to do without knowing how your data structure is arranged.&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git init
+&lt;p&gt;Ok - enough with the abstract, let’s look at some code.&lt;/p&gt;
+
+&lt;p&gt;Something fairly typical I do is to get some meta fields out of the database, so let’s use that as an example.&lt;/p&gt;
+
+&lt;p&gt;The code to retrieve some &lt;a href=&quot;http://codex.wordpress.org/Function_Reference/get_post_meta&quot;&gt;post meta&lt;/a&gt; is as follows:&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;get_post_meta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$post_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$single&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;And commit&lt;/p&gt;
+&lt;p&gt;Let us also imagine that the field we’ll be retrieving is not a simple string, it is &lt;em&gt;gasp&lt;/em&gt; an array, or even worse - a multidimensional array. I’m going to assume for the moment that you already know what an &lt;a href=&quot;http://en.wikipedia.org/wiki/Array_data_structure&quot;&gt;array&lt;/a&gt; is.&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add . 
-git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Initial Commit&quot;&lt;/span&gt;
+&lt;p&gt;So are field is an array and we need a specific part of that array. If we’re just starting to build out our theme and aren’t the ones that put the array together, how do we know what’s stored in it?&lt;/p&gt;
+
+&lt;p&gt;Simple - we use a PHP tool called &lt;a href=&quot;http://php.net/manual/en/function.var-dump.php&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;var_dump()&lt;/code&gt;&lt;/a&gt;. Essentially what this tool does is output the complete array structure for us to examine.&lt;/p&gt;
+
+&lt;p&gt;For the purposes of our example, I’ll do a var_dump of our retrieved meta value:&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$array_variable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;get_post_meta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'custom_field_example'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;var_dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$array_variable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Oh - a sidenote here, I find TextExpander is an awesome helper here. I set up a couple abbreviations to help with the git commands that I use all the time. For example &lt;code class=&quot;highlighter-rouge&quot;&gt;gita&lt;/code&gt; = &lt;code class=&quot;highlighter-rouge&quot;&gt;git add .&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;gitc&lt;/code&gt; = &lt;code class=&quot;highlighter-rouge&quot;&gt;git commit -am &quot;%|&quot;&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Once the git repo has been establish it’s time to start developing.&lt;/p&gt;
-
-&lt;p&gt;Once I’m happy with development and need to have a live version for testing or for review I set up my live hub and live prime repos. Many thanks to Joe Maller for writing a &lt;a href=&quot;http://joemaller.com/990/a-web-focused-git-workflow/&quot;&gt;kickass tutorial&lt;/a&gt; on this.&lt;/p&gt;
-
-&lt;p&gt;SSH capabilities to your server are a must. If you don’t have them - ask your provider. If they still don’t budge, perhaps it’s time to move to a better host.&lt;/p&gt;
-
-&lt;p&gt;After I’ve gotten the bare repo set up in a non-http accessible portion of my server than I install WordPress on the server, get it configured and initialize the ‘prime’ version git repo in the theme folder.&lt;/p&gt;
-
-&lt;p&gt;Locally I set up a hub remote to the bare hub repo we created&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote add hub ssh://111.111.11.111:/home/bare_git_repo.git/
+&lt;p&gt;Result:&lt;/p&gt;
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;key&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;value&quot;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;key2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;tax_query&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;taxonomy&quot;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;And force push master to the hub&lt;/p&gt;
+&lt;p&gt;Right off the bat we can see that we have a multidimensional array. Now if we needed to just use an element within that array we could specify just that element. I will do so simply within the var_dump:&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git push &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; hub master
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;var_dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$array_variable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'key2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Add hub as a remote for prime and force pull to get in sync&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote add hub /home/bare_git_repo.git
-git pull &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; hub master
+&lt;p&gt;Result:&lt;/p&gt;
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;tax_query&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;taxonomy&quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;And there you have it. Don’t forget if you’re following along to review Joe Maller’s guide and make sure you set up your post-commit and post-update hooks which allow you to automatically update the prime repo when you push to hub.&lt;/p&gt;
+&lt;p&gt;The important thing to take away from all this is that &lt;code class=&quot;highlighter-rouge&quot;&gt;var_dump()&lt;/code&gt; is your friend. Use it to experiment. If you’re unsure of what a variable or object contains &lt;code class=&quot;highlighter-rouge&quot;&gt;var_dump&lt;/code&gt; it!&lt;/p&gt;
 
-&lt;p&gt;Also a word of caution: be aware if you edit files on the server live, you have to SSH in and sync back your other repos or it’ll get out of sync and you’ll have to reset. I’ve been using this setup for a couple months and haven’t once felt the need to fire up a FTP program, live-edit a file and save it and see if it works. Instead I’ve found editing the same file locally, testing locally and then doing a quick&lt;/p&gt;
+&lt;p&gt;Understanding that I could explore arrays and objects with &lt;code class=&quot;highlighter-rouge&quot;&gt;var_dump()&lt;/code&gt; was a major milestone on my path to becoming a better developer.&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">Something I hear all the time and that was initially the biggest learning for me was understanding the data and the structure of objects that we have to interact with.</summary></entry><entry><title type="html">Incremental Array Changes</title><link href="http://localhost:4000/incremental-array-changes" rel="alternate" type="text/html" title="Incremental Array Changes" /><published>2012-07-22T00:00:00-05:00</published><updated>2012-07-22T00:00:00-05:00</updated><id>http://localhost:4000/incremental-array-changes</id><content type="html" xml:base="http://localhost:4000/incremental-array-changes">&lt;p&gt;Something that I’ve come across recently as I start to build dynamic queries is changing the arguments array ever so slightly.&lt;/p&gt;
 
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git add &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
-git commit &lt;span class=&quot;nt&quot;&gt;-am&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;commit&quot;&lt;/span&gt;
+&lt;p&gt;At first I was doing this&lt;/p&gt;
+
+&lt;p&gt;If featured posts:&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$args&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+	&lt;span class=&quot;s1&quot;&gt;'post_type'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'charity'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;s1&quot;&gt;'order'&lt;/span&gt;					&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ASC'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;s1&quot;&gt;'posts_per_page'&lt;/span&gt;		&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;s1&quot;&gt;'showposts'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;s1&quot;&gt;'tax_query'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+		&lt;span class=&quot;s1&quot;&gt;'taxonomy'&lt;/span&gt;			&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'charity-category'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+		&lt;span class=&quot;s1&quot;&gt;'field'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'slug'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+		&lt;span class=&quot;s1&quot;&gt;'terms'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'featured'&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;is much quicker and easier. Your mileage may vary however.&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">hifiDesign over on Reddit asked the question of how to use WordPress and SVN (or git in this case). Here is my more extended answer:</summary></entry></feed>
+&lt;p&gt;If not featured posts:&lt;/p&gt;
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$args&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+	&lt;span class=&quot;s1&quot;&gt;'post_type'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'charity'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;s1&quot;&gt;'order'&lt;/span&gt;					&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ASC'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;s1&quot;&gt;'posts_per_page'&lt;/span&gt;		&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;s1&quot;&gt;'showposts'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;After being frustrated by the redundancy and trying a couple different variations I discovered the correct way to push elements onto the &lt;code class=&quot;highlighter-rouge&quot;&gt;$args&lt;/code&gt; array.&lt;/p&gt;
+
+&lt;p&gt;This is the correct way to create incremental array changes for your array:&lt;/p&gt;
+
+&lt;p&gt;First, declare all common attributes&lt;/p&gt;
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$args&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+	&lt;span class=&quot;s1&quot;&gt;'post_type'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'charity'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;s1&quot;&gt;'order'&lt;/span&gt;					&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ASC'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;s1&quot;&gt;'posts_per_page'&lt;/span&gt;		&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If featured posts, declaring incrementally&lt;/p&gt;
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'showposts'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'tax_query'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+		&lt;span class=&quot;s1&quot;&gt;'taxonomy'&lt;/span&gt;			&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'charity-category'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+		&lt;span class=&quot;s1&quot;&gt;'field'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'slug'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+		&lt;span class=&quot;s1&quot;&gt;'terms'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'featured'&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;If not featured posts then we’re done!&lt;/p&gt;
+
+&lt;p&gt;I thought at first you could simply push the array element (say &lt;code class=&quot;highlighter-rouge&quot;&gt;tax_query&lt;/code&gt; which is actually an array itself), but that actually puts it at the wrong level in the &lt;code class=&quot;highlighter-rouge&quot;&gt;$args&lt;/code&gt; array. Let’s take a look.&lt;/p&gt;
+
+&lt;p&gt;Here’s the output from our first full array entry (using &lt;a href=&quot;http://php.net/manual/en/function.var-dump.php&quot;&gt;var_dump&lt;/a&gt;):&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;post_type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;charity&quot;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;order&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;ASC&quot;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;posts_per_page&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;showposts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;tax_query&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;taxonomy&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;charity-category&quot;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;field&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;slug&quot;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;terms&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;featured&quot;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, if we were to use the &lt;code&gt;&lt;a href=&quot;http://php.net/manual/en/function.array-push.php&quot;&gt;array_push&lt;/a&gt;&lt;/code&gt; method this is what we would get (assuming we’re pushing the &lt;code&gt;tax_query&lt;/code&gt; array).&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;post_type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;charity&quot;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;order&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;ASC&quot;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;posts_per_page&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;showposts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;tax_query&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;taxonomy&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;charity-category&quot;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;field&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;slug&quot;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;terms&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;featured&quot;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;You can clearly see we’re off by a whole level at line 13. So the way around this is to just specify in the &lt;code class=&quot;highlighter-rouge&quot;&gt;array_push&lt;/code&gt; the element.&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$args&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;'post_type'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'charity'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;'order'&lt;/span&gt;					&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ASC'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;'posts_per_page'&lt;/span&gt;	&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;s1&quot;&gt;'showposts'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'tax_query'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
+	&lt;span class=&quot;s1&quot;&gt;'taxonomy'&lt;/span&gt;			&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'charity-category'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;s1&quot;&gt;'field'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'slug'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+	&lt;span class=&quot;s1&quot;&gt;'terms'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'featured'&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And the output:&lt;/p&gt;
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;post_type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;charity&quot;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;order&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;ASC&quot;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;posts_per_page&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;showposts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;tax_query&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;taxonomy&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;charity-category&quot;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;field&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;slug&quot;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;terms&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;featured&quot;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;As you can see this matches the array structure that we want.&lt;/p&gt;
+
+&lt;p&gt;And there you have it! Incremental array changes - helpful when creating a dynamic query!&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">Something that I’ve come across recently as I start to build dynamic queries is changing the arguments array ever so slightly.</summary></entry><entry><title type="html">Good weekend</title><link href="http://localhost:4000/good-weekend" rel="alternate" type="text/html" title="Good weekend" /><published>2012-06-04T00:00:00-05:00</published><updated>2012-06-04T00:00:00-05:00</updated><id>http://localhost:4000/good-weekend</id><content type="html" xml:base="http://localhost:4000/good-weekend">&lt;p&gt;&lt;strong&gt;Today was a good day. In fact, this weekend was a good weekend.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I attended and spoke at the 2012 Milwaukee WordCamp. What an amazing time. I came inches from a swell of honeybees. I rode an antiquated lift elevator straight out of the 1900s. I met a famous cewebrity (web celebrity). I faced fears and inspired greatness. I was inspired. I am happy.&lt;/p&gt;
+
+&lt;p&gt;My talk was on WordPress and Version Control: A Workflow. I demonstrated how to use Git and WordPress to develop locally, set up a deployment system and push deploys live with the push of a button. People were telling me great job until I left the next day. I feel confident that although I have room for improvement, I did not present something akin to dog excrement. I thank all of you who paid me with your attention, and I am looking forward to doing more such speaking in the future.&lt;/p&gt;
+
+&lt;p&gt;John James Jacoby was so great to meet and talk with. I learned about how even though it looks not as sexy, Netbeans IDE is a stronger tool than Sublime Text, since I can work through code, easily jump through functions and see diffs right in the IDE. I enjoyed meeting someone from Automattic and am looking forward to meeting more WordPress legends.&lt;/p&gt;
+
+&lt;p&gt;The after party hang out at Milwaukee Brewing Company was awesome. I had a great hour or so talking and listening to Jess Jurick from 10up, JJJ from Automattic, and Brad Parbs. I truly believe the quality connections are what make these networking events worthwhile.&lt;/p&gt;
+
+&lt;p&gt;I met a woman that likes Merlin Mann! It was incredibly exciting to finally meet someone in real life that even knows who the heck he is and what he’s done. A fleeting moment, but truly awesome. Rachel Baker’s a heck of a coder and I look forward to learning quite a bit from her.&lt;/p&gt;
+
+&lt;p&gt;My wife Julie truly deserves my sincerest thanks for playing the role of two parents this weekend and barely getting any sleep. I’m taking double shifts tonight, please get some rest.&lt;/p&gt;
+
+&lt;p&gt;Twitter rocks at conferences. I don’t use it too much in normal life, but it’s brilliant in a close group of people. Like a connectedness that you can’t see but ties everyone together.&lt;/p&gt;
+
+&lt;p&gt;Being a speaker, and coming to help out the day beforehand with other speakers is amazing. I feel like we all formed a little bit of a bond that strengthened immediately upon the attendees showing up. All of a sudden we all have something in common and are happy to see one another. I love it.&lt;/p&gt;
+
+&lt;p&gt;Connecting with geeks is awesome! I truly love geeing out about Sublime or git config files or Merlin Mann. I need to find more geeks. I wish Chicago was more of a tech city. Anyone want to geek out?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Some thoughts that were in my brain and are now here:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Be honest. There’s no sense in lying. Just be yourself, be honest and good things will happen. Better things than if you lie.&lt;/p&gt;
+
+&lt;p&gt;I got a parking ticket because I’m an idiot. Don’t park your car over the sidewalk.&lt;/p&gt;
+
+&lt;p&gt;Find out what makes people tick and if it’s interesting dig deeper. If its not interesting go get a refill and find someone else to talk to.&lt;/p&gt;
+
+&lt;p&gt;You’re simultaneously stupider and smarter than you think you are.&lt;/p&gt;
+
+&lt;p&gt;Talking to other people is a great way to reflect upon who you are and what you’ve achieved.&lt;/p&gt;
+
+&lt;p&gt;Don’t correct someone unless you’re 100% sure you’re right and if correcting them is worth wasting your breath. Otherwise you’ll end up feeling stupid and they’ll think you’re stupid and kind of a dick.&lt;/p&gt;
+
+&lt;p&gt;Hand lotion is clutch. Dry knuckles are a bitch.&lt;/p&gt;
+
+&lt;p&gt;Present early the first day. People are pumped, they’re still there and they’re not antsy to get back to their life and family.&lt;/p&gt;
+
+&lt;p&gt;Don’t bring a 20lb camera with two lenses and a flash. Bring a light laptop, your phone and a water bottle. That’s it. Keep it light and keep it easy. You’re going to be humping this crap around for two plus days, don’t make it harder on yourself than it has to be.&lt;/p&gt;
+
+&lt;p&gt;Teaching others forces you to understand something better.&lt;/p&gt;
+
+&lt;p&gt;I would gladly drive 7 hours to experience a weekend like the one I just had.&lt;/p&gt;
+
+&lt;p&gt;Human quality connections trump quantity of connections any day.&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">Today was a good day. In fact, this weekend was a good weekend.</summary></entry><entry><title type="html">WordCamp Milwaukee 2012, slides!</title><link href="http://localhost:4000/wordcamp-milwaukee-2012-slides" rel="alternate" type="text/html" title="WordCamp Milwaukee 2012, slides!" /><published>2012-06-02T00:00:00-05:00</published><updated>2012-06-02T00:00:00-05:00</updated><id>http://localhost:4000/wordcamp-milwaukee-2012-slides</id><content type="html" xml:base="http://localhost:4000/wordcamp-milwaukee-2012-slides">&lt;p&gt;Thanks to everyone who attended my session on WordPress and Version Control!&lt;/p&gt;
+
+&lt;p&gt;I promised slides and unfortunately had a bit of a hiccup with bit.ly. Here are the slides:&lt;/p&gt;
+
+&lt;script async=&quot;&quot; class=&quot;speakerdeck-embed&quot; data-id=&quot;50356cf4eca5f60002003eef&quot; data-ratio=&quot;1.33333333333333&quot; src=&quot;//speakerdeck.com/assets/embed.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Feel free to comment or shoot me a message on twitter if you want to talk @aaronjholbrook.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Update: &lt;/strong&gt;slides are now up on speakerdeck. Enjoy!&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">Thanks to everyone who attended my session on WordPress and Version Control!</summary></entry><entry><title type="html">WordCamp Chicago 2011</title><link href="http://localhost:4000/wordcamp-chicago-2011" rel="alternate" type="text/html" title="WordCamp Chicago 2011" /><published>2011-07-31T00:00:00-05:00</published><updated>2011-07-31T00:00:00-05:00</updated><id>http://localhost:4000/wordcamp-chicago-2011</id><content type="html" xml:base="http://localhost:4000/wordcamp-chicago-2011">&lt;p&gt;So I just got back home from the first day of Chicago’s WordCamp 2011 held at the lovely Depaul University in downtown Chicago. Man, what a great experience - I just love the inspiration and the idea sharing that goes on at these conferences.&lt;/p&gt;
+
+&lt;p&gt;Some highlights of the day were:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Dave Tufts' &lt;a href=&quot;http://kickpress.org/&quot;&gt;KickPress WordPress API&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;TJ Stein's great talk on developing fast &amp;amp; scalable servers&lt;/li&gt;
+&lt;li&gt;Jason McCreary's talk about &lt;a href=&quot;http://jason.pureconcepts.net/articles/wordcamp-chicago-talk-configuring-multiple-environments-wordpress?PHPSESSID=76507cc009dfe9ea72300f9a2129f2ef&quot;&gt;developing WordPress on multiple environments&lt;/a&gt; (hooray for finally perfecting my workflow! More on this later!)&lt;/li&gt;
+&lt;li&gt;And finally Brian Richards motivational Developing for Success in which he reveals he's released his development framework &lt;a href=&quot;http://wpstartbox.com/&quot;&gt;Startbox&lt;/a&gt; for free!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Also, at the after party I had the opportunity to meet the fantastic Ryan Imel from &lt;a href=&quot;http://wpcandy.com/&quot;&gt;WP Candy&lt;/a&gt;, which was awesome.&lt;/p&gt;
+
+&lt;p&gt;All in all a great day - and I’m looking forward to more of the same tomorrow.&lt;/p&gt;
+
+&lt;p&gt;Cheers!&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">So I just got back home from the first day of Chicago’s WordCamp 2011 held at the lovely Depaul University in downtown Chicago. Man, what a great experience - I just love the inspiration and the idea sharing that goes on at these conferences.</summary></entry><entry><title type="html">Adding a redirect link from a post (or page)</title><link href="http://localhost:4000/adding-a-redirect-link-from-a-post-or-page" rel="alternate" type="text/html" title="Adding a redirect link from a post (or page)" /><published>2011-07-18T00:00:00-05:00</published><updated>2011-07-18T00:00:00-05:00</updated><id>http://localhost:4000/adding-a-redirect-link-from-a-post-or-page</id><content type="html" xml:base="http://localhost:4000/adding-a-redirect-link-from-a-post-or-page">&lt;p&gt;I just had a client request that for his home page posts that were being displayed, have them link instead to a permanent page. The type of content that they were linking to was longer term and the posts that were being displayed were created just as excerpts.&lt;/p&gt;
+
+&lt;p&gt;Not a problem! Let’s just set up a custom field value, call it ‘redirect’ and go to work.&lt;/p&gt;
+
+&lt;p&gt;So we’ll be editing the page-home.php file and first testing to see if the custom field value exists.&lt;/p&gt;
+
+&lt;p&gt;Using our get_custom_field_value function we’ll do a quick if then statement:&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;get_custom_field_value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'redirect'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;get_custom_field_value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'redirect'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;the_permalink&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
+&lt;span class=&quot;nx&quot;&gt;the_title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;So that will change the title link if there’s a redirect value. We can easily add this to the thumbnail so if there’s a featured image it’ll go to the right page.&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;get_custom_field_value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'redirect'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;get_custom_field_value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'redirect'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;the_permalink&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;the_post_thumbnail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'thumbnail'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'class'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'thumbnail rounded-img'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;All in all, fairly quick and easy. Sure there’s plugins out there, but using a custom field is a little less taxing and just as easy.&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">I just had a client request that for his home page posts that were being displayed, have them link instead to a permanent page. The type of content that they were linking to was longer term and the posts that were being displayed were created just as excerpts.</summary></entry><entry><title type="html">Auto-update version of css</title><link href="http://localhost:4000/auto-update-version-of-css" rel="alternate" type="text/html" title="Auto-update version of css" /><published>2011-06-28T00:00:00-05:00</published><updated>2011-06-28T00:00:00-05:00</updated><id>http://localhost:4000/auto-update-version-of-css</id><content type="html" xml:base="http://localhost:4000/auto-update-version-of-css">&lt;p&gt;I just stumbled across this on &lt;a href=&quot;http://markjaquith.wordpress.com/&quot;&gt;Mark Jaquith’s blog&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It’s a really handy way of getting around the automatic caching that happens to css files.&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bloginfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'stylesheet_url'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'?'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;filemtime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;get_stylesheet_directory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'/style.css'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/css&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;media=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;screen, projection&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Basically it uses the timestamp as the variable that changes. Anytime you update the css file any browser will think it’s a new file and go and get it.&lt;/p&gt;
+
+&lt;p&gt;Simple and useful - thanks Mark!&lt;/p&gt;
+
+&lt;p&gt;via: &lt;a href=&quot;http://markjaquith.wordpress.com/2009/05/04/force-css-changes-to-go-live-immediately/&quot;&gt;http://markjaquith.wordpress.com/2009/05/04/force-css-changes-to-go-live-immediately/&lt;/a&gt;&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">I just stumbled across this on Mark Jaquith’s blog.</summary></entry></feed>
