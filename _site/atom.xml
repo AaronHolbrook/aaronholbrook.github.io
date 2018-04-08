@@ -1,405 +1,210 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-04-07T23:07:56-05:00</updated><id>http://localhost:4000/</id><title type="html">Holbrook, Inc.</title><subtitle>Stuff that matters. :+1:</subtitle><author><name>Aaron Holbrook</name></author><entry><title type="html">WordPress Template Hierarchy Explained</title><link href="http://localhost:4000/wordpress-template-hierarchy-explained" rel="alternate" type="text/html" title="WordPress Template Hierarchy Explained" /><published>2013-02-22T00:00:00-06:00</published><updated>2013-02-22T00:00:00-06:00</updated><id>http://localhost:4000/wordpress-template-hierarchy-explained</id><content type="html" xml:base="http://localhost:4000/wordpress-template-hierarchy-explained">&lt;p&gt;I did a quick screencast on what the WordPress Template Hierarchy is and why understanding it is one of the first steps to becoming a good WordPress developer.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-04-08T00:03:38-05:00</updated><id>http://localhost:4000/</id><title type="html">Holbrook, Inc.</title><subtitle>:zap: Things I've learned. Stuff that matters. :100:</subtitle><author><name>Aaron Holbrook</name></author><entry><title type="html">Programmatically clear your WP Engine cache</title><link href="http://localhost:4000/programmatically-clear-wp-engine-cache" rel="alternate" type="text/html" title="Programmatically clear your WP Engine cache" /><published>2017-06-13T00:00:00-05:00</published><updated>2017-06-13T00:00:00-05:00</updated><id>http://localhost:4000/programmatically-clear-wp-engine-cache</id><content type="html" xml:base="http://localhost:4000/programmatically-clear-wp-engine-cache">&lt;p&gt;In my desire to create a better process for building and deploying at &lt;a href=&quot;http://zeek.com&quot;&gt;Zeek&lt;/a&gt;, I recently hit a road bump while trying to perform automatic visual regression testing immediately after deployment.&lt;/p&gt;
 
-&lt;div class=&quot;responsive-embed responsive-embed-16by9&quot;&gt;
-  &lt;iframe src=&quot;http://www.youtube.com/watch?v=-AO5jBsUpJY&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">I did a quick screencast on what the WordPress Template Hierarchy is and why understanding it is one of the first steps to becoming a good WordPress developer.</summary></entry><entry><title type="html">My solution to quickly syncing .bash_profile on multiple machines</title><link href="http://localhost:4000/my-solution-to-quickly-syncing-bash_profile-on-multiple-machines" rel="alternate" type="text/html" title="My solution to quickly syncing .bash_profile on multiple machines" /><published>2013-01-15T00:00:00-06:00</published><updated>2013-01-15T00:00:00-06:00</updated><id>http://localhost:4000/my-solution-to-quickly-syncing-bash_profile-on-multiple-machines</id><content type="html" xml:base="http://localhost:4000/my-solution-to-quickly-syncing-bash_profile-on-multiple-machines">&lt;p&gt;You know that feeling when you’re setting up a brand new server and it’s not set up the way you’ve spent years tweaking it to be?&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/wpengine.png&quot; alt=&quot;center-aligned-image&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;figure class=&quot;align-center&quot;&gt;
-  &lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/bash-profile-syncing-comfortable.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-  &lt;figcaption&gt;Nice and comfy customized `.bash_profile`, even got my `ls` command to show hidden files by default!&lt;/figcaption&gt;
-&lt;/figure&gt;
+&lt;p&gt;This is due to WP Engine’s full page cache.&lt;/p&gt;
 
-&lt;p&gt;As opposed to the following (setting up a new linux box, not even ls works how I like it).&lt;/p&gt;
+&lt;p&gt;Immediately after we deploy our changes, WP Engine’s cache is still showing the old files and has not yet been cleared/flushed/rebuilt. This means our visual acceptance test is testing our &lt;em&gt;pre&lt;/em&gt;-deploy changes.&lt;/p&gt;
 
-&lt;figure class=&quot;align-center&quot;&gt;
-  &lt;a href=&quot;#&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/bash-profile-syncing-yuck.png&quot; alt=&quot;&quot; /&gt;&lt;/a&gt;
-  &lt;figcaption&gt;Default. Ugh - beat it with the `.bash_profile` stick please!&lt;/figcaption&gt;
-&lt;/figure&gt;
+&lt;p&gt;This is entirely unacceptable; this means that we won’t know if something is broken until an &lt;em&gt;unknown, later date&lt;/em&gt;. In the world of deploying changes, you want to know immediately if the changes you’ve made had a negative impact, so you can do something about it while you’re around, not later when you’re out on a walk with your family.&lt;/p&gt;
 
-&lt;p&gt;After taking a brief glance at &lt;a href=&quot;http://alias.sh&quot;&gt;alias.sh&lt;/a&gt;, I decided I wanted to be able to customize things just a little bit more to my liking.&lt;/p&gt;
+&lt;p&gt;Unfortunately WP Engine currently does not offer a programmatic (i.e. non-manual) solution to this issue.&lt;/p&gt;
 
-&lt;p&gt;I came up with the following workflow:&lt;/p&gt;
-&lt;ol&gt;
-	&lt;li&gt;Use GitHub to host a always-up-to-date published `.bash_profile`&lt;/li&gt;
-	&lt;li&gt;Use a TextExpander snippet to easily wget the `.bash_profile` from GitHub onto the new server&lt;/li&gt;
-	&lt;li&gt;[OPTIONAL] Keep my local work machine's aliases separate from remote production machines by separating them out into a `.bash_aliases` file&lt;/li&gt;
-	&lt;li&gt;[OPTIONAL] One more TextExpander snippet for the `.bash_aliases` to make things easy&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;And so I built one myself: &lt;a href=&quot;https://github.com/a7/wpe-cache-flush/&quot;&gt;WPE Cache Flush&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2&gt;Step 1&lt;/h2&gt;
+&lt;p&gt;I began diving into the code that powers the WP Engine functionality on the site. What I found was the functionality that allows the purge cache button to work.&lt;/p&gt;
 
-&lt;p&gt;I published out my files in a new repo on GitHub, titled tersely enough: &lt;a title=&quot;Aaron Holbrook's dotfiles&quot; href=&quot;https://github.com/aaronholbrook/dotfiles&quot;&gt;dotfiles&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/images/wpe-purge-cache.png&quot; alt=&quot;center-aligned-image&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;I went back and forth between GitHub and BitBucket, and even tried out BitBucket since they offer free private repositories, but unfortunately BitBucket’s URLs for the RAW files include the commit hash, which would be changing with each commit, rendering my TextExpander snippet useless.&lt;/p&gt;
+&lt;p&gt;I then replicated that functionality in my own package and created a webhook listener.&lt;/p&gt;
 
-&lt;p&gt;So - because I need the RAW file URL to be unchanging, I went with GitHub, even though it means publicizing all my current aliases. Oh well - enjoy :)&lt;/p&gt;
+&lt;p&gt;And now we have a programmatic way to purge the WP Engine cache!&lt;/p&gt;
 
-&lt;p&gt;So - this gets us a public published RAW url that will not change:&lt;/p&gt;
+&lt;p&gt;This is both a WordPress plugin as well as a composer package: &lt;strong&gt;&lt;a href=&quot;https://github.com/a7/wpe-cache-flush/&quot;&gt;WPE Cache Flush&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://raw.github.com/AaronHolbrook/dotfiles/master/.bash_profile&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;https://raw.github.com/AaronHolbrook/dotfiles/master/.bash_profile&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">In my desire to create a better process for building and deploying at Zeek, I recently hit a road bump while trying to perform automatic visual regression testing immediately after deployment.</summary></entry><entry><title type="html">Simpler loading with Autoload!</title><link href="http://localhost:4000/simpler-loading-with-autoload" rel="alternate" type="text/html" title="Simpler loading with Autoload!" /><published>2015-06-04T00:00:00-05:00</published><updated>2015-06-04T00:00:00-05:00</updated><id>http://localhost:4000/simpler-loading-with-autoload</id><content type="html" xml:base="http://localhost:4000/simpler-loading-with-autoload">&lt;h2 id=&quot;purpose&quot;&gt;Purpose&lt;/h2&gt;
+&lt;p&gt;Automatically load all PHP files in the specified directory. Recursively.&lt;/p&gt;
 
-&lt;h2&gt;Step 2&lt;/h2&gt;
-&lt;p&gt;I use the following command:&lt;/p&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wget &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-O&lt;/span&gt; - &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$@&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; https://raw.github.com/AaronHolbrook/dotfiles/master/.bash_profile &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; ~/.bash_profile
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;and place it inside a TextExpander snippet with the shortcut of: &lt;code class=&quot;highlighter-rouge&quot;&gt;dotfilespullprofile&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2&gt;Step 3&lt;/h2&gt;
-
-&lt;p&gt;For my personal use case, I prefer to have my command prompt styled and things like ls and stuff always the same, regardless of if I’m on my own machine or if I’m SSHed into a server. But there are certain aliases that shortcut me to some folders, however I don’t really want those aliases to be on the server (as it’d be pointless and confusing).&lt;/p&gt;
-
-&lt;p&gt;Thus, I separated my aliases into a separate file, which .bash_profile only pulls in if it exists:&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; ~/.bash_aliases &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; ~/.bash_aliases
-&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2&gt;Step 4&lt;/h2&gt;
-
-&lt;p&gt;I use the following command to pull in the &lt;code class=&quot;highlighter-rouge&quot;&gt;.bash_alias&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wget &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-O&lt;/span&gt; - &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$@&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; https://raw.github.com/AaronHolbrook/dotfiles/master/.bash_alias &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; ~/.bash_alias
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2&gt;Tada!&lt;/h2&gt;
-&lt;p&gt;And there you have it, a quick and dirty way to sync your always-up-to-date &lt;code class=&quot;highlighter-rouge&quot;&gt;.bash_profile&lt;/code&gt; onto new machines!&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">You know that feeling when you’re setting up a brand new server and it’s not set up the way you’ve spent years tweaking it to be?</summary></entry><entry><title type="html">Full listing of all WordPress functions</title><link href="http://localhost:4000/full-listing-of-all-wordpress-functions" rel="alternate" type="text/html" title="Full listing of all WordPress functions" /><published>2013-01-11T00:00:00-06:00</published><updated>2013-01-11T00:00:00-06:00</updated><id>http://localhost:4000/full-listing-of-all-wordpress-functions</id><content type="html" xml:base="http://localhost:4000/full-listing-of-all-wordpress-functions">&lt;p&gt;Because I’m a huge nerd and my google search results failed to bring up anything resembling a true listing, I thought I would throw together a little curl, grep and sed magic.&lt;/p&gt;
-
-&lt;p&gt;Mostly spent time adjusting the regex to get it just right and strip out all non-essential elements.&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; http://codex.wordpress.org/Function_Reference | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; 0 &lt;span class=&quot;s2&quot;&gt;&quot;title=&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Function Reference&quot;&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;sed&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'s/.*:.*Function Reference\/.*&quot;&amp;gt;//'&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;sed&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'s/&amp;lt;.*&amp;gt;//'&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;sed&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'s/(.*)//'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; wp-functions.txt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://gist.github.com/4511254&quot;&gt;Gist&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;UPDATE:&lt;/strong&gt; I was informed by &lt;a title=&quot;Ryan Duff, Twitter fiend&quot; href=&quot;https://twitter.com/ryancduff&quot;&gt;Mr. Ryan Duff&lt;/a&gt; there is in fact a much more comprehensive listing over at &lt;a title=&quot;much more comprehensive WordPress function listing&quot; href=&quot;http://api.wpseek.com/?method=wordpress.getfunctions&amp;amp;output=plain&quot;&gt;WP Seek&lt;/a&gt;.&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">Because I’m a huge nerd and my google search results failed to bring up anything resembling a true listing, I thought I would throw together a little curl, grep and sed magic.</summary></entry><entry><title type="html">Debugging server problems step by step</title><link href="http://localhost:4000/debugging-server-problems-step-by-step" rel="alternate" type="text/html" title="Debugging server problems step by step" /><published>2013-01-10T00:00:00-06:00</published><updated>2013-01-10T00:00:00-06:00</updated><id>http://localhost:4000/debugging-server-problems-step-by-step</id><content type="html" xml:base="http://localhost:4000/debugging-server-problems-step-by-step">&lt;p&gt;First off, I have to give major thanks to &lt;a title=&quot;WordPress Badass&quot; href=&quot;http://evansolomon.me/&quot;&gt;Mr. Evan Solomon&lt;/a&gt; for very graciously helping me diagnose and fix a very hard to pinpoint bug with NGINX and WooCommerce.&lt;/p&gt;
-
-&lt;p&gt;I had recently moved a customized WooCommerce site from MediaTemple GS (which runs Apache as its webserver) to a custom built Linode VPS (which I am running NGINX on). The Linode VPS was successfully set up with NGINX, APC and Varnish cache. The site worked fine, PHP loaded fine, WordPress worked and ran fine. I even had pretty permalinks working just fine with NGINX. So far so good right?&lt;/p&gt;
-
-&lt;p&gt;So I thought - until my client noticed she could not add any of the products to the cart. Quite odd since I didn’t actually change anything in the code, I had simply migrated the files and database to the new server.&lt;/p&gt;
-
-&lt;p&gt;I started to snoop around and I hypothesized that perhaps some of the heavy caching was the culprit. So I disabled Varnish and APC. Still the problem persisted. (This is about the time I brought Evan in).&lt;/p&gt;
-
-&lt;p&gt;Evan suggested I look through the WooCommerce function, most notably the part that validates what has been added to the cart. I refused to believe anything could be wrong in the code, especially because I hadn’t changed anything! It had to be a server issue, right?&lt;/p&gt;
-
-&lt;p&gt;Turns out, going through the code is VERY beneficial, because you can pinpoint at what point the problem is occurring. I placed a &lt;code class=&quot;highlighter-rouge&quot;&gt;var_dump($_REQUEST)&lt;/code&gt;, starting just at the point the WooCommerce validation runs. It came back as &lt;code class=&quot;highlighter-rouge&quot;&gt;NULL&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Huh. So - why wouldn’t it be receiving the query parameters? Ok - let’s go further up suggested Evan. Let’s place a &lt;code class=&quot;highlighter-rouge&quot;&gt;var_dump&lt;/code&gt; in &lt;code class=&quot;highlighter-rouge&quot;&gt;wp-blog-header.php&lt;/code&gt;. I did and it turned out that &lt;code class=&quot;highlighter-rouge&quot;&gt;$_REQUEST&lt;/code&gt; was still &lt;code class=&quot;highlighter-rouge&quot;&gt;NULL&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;I even put it in &lt;code class=&quot;highlighter-rouge&quot;&gt;index.php&lt;/code&gt; - it couldn’t possibly be &lt;code class=&quot;highlighter-rouge&quot;&gt;NULL&lt;/code&gt; here right? Yep - definitely &lt;code class=&quot;highlighter-rouge&quot;&gt;NULL&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Ok - let’s try a simple file called &lt;code class=&quot;highlighter-rouge&quot;&gt;request.php&lt;/code&gt; and put inside it the following.&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;var_dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_REQUEST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Let’s visit that then with a query string: site/request.php?foo=bar.&lt;/p&gt;
-
-&lt;p&gt;Result worked great, so what was it about &lt;code class=&quot;highlighter-rouge&quot;&gt;index.php&lt;/code&gt; that had us so stumped?&lt;/p&gt;
-
-&lt;p&gt;Ready for this?&lt;/p&gt;
-
-&lt;p&gt;Turns out the problem was in the NGINX server config file! In the area for &lt;code class=&quot;highlighter-rouge&quot;&gt;try_files&lt;/code&gt;, I had the following:&lt;/p&gt;
-
-&lt;div class=&quot;language-nginx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kn&quot;&gt;try_files&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$uri&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$uri&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/index.php&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Unfortunately, the end result of this is that it strips all query parameters at the end of &lt;code class=&quot;highlighter-rouge&quot;&gt;index.php&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Evan helped me realize that the configuration should instead look like this:&lt;/p&gt;
-
-&lt;div class=&quot;language-nginx highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;location&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;kn&quot;&gt;try_files&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$uri&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$uri&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;/index.php?&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Don’t forget to restart or reload nginx after you’ve made any changes to the config files!&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;service nginx reload
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;So - even if you know the code is good, it helps to debug thoroughly to identify where the problem resides.&lt;/p&gt;
-
-&lt;p&gt;Thanks Evan for your help! You’re a rockstar!&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">First off, I have to give major thanks to Mr. Evan Solomon for very graciously helping me diagnose and fix a very hard to pinpoint bug with NGINX and WooCommerce.</summary></entry><entry><title type="html">Screencast: Intro to Git</title><link href="http://localhost:4000/screencast-01-intro-to-git" rel="alternate" type="text/html" title="Screencast: Intro to Git" /><published>2012-09-10T00:00:00-05:00</published><updated>2012-09-10T00:00:00-05:00</updated><id>http://localhost:4000/screencast-intro-to-git</id><content type="html" xml:base="http://localhost:4000/screencast-01-intro-to-git">&lt;p&gt;Thought it’d be nice to demo how to set up and get your own repository going with Git.&lt;/p&gt;
-
-&lt;div class=&quot;responsive-embed responsive-embed-16by9&quot;&gt;
-  &lt;iframe src=&quot;http://www.youtube.com/watch?v=2bg2yVOl5Q0&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Let me know if you like the format, I’m thinking about doing some screencasts and would love feedback!&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">Thought it’d be nice to demo how to set up and get your own repository going with Git.</summary></entry><entry><title type="html">My thoughts on WordCamp Grand Rapids 2012</title><link href="http://localhost:4000/my-thoughts-on-wordcamp-grand-rapids-2012" rel="alternate" type="text/html" title="My thoughts on WordCamp Grand Rapids 2012" /><published>2012-08-22T00:00:00-05:00</published><updated>2012-08-22T00:00:00-05:00</updated><id>http://localhost:4000/my-thoughts-on-grand-rapids-2012</id><content type="html" xml:base="http://localhost:4000/my-thoughts-on-wordcamp-grand-rapids-2012">&lt;p&gt;Some thoughts I had on my way home from WordCamp Grand Rapids 2012:&lt;/p&gt;
+&lt;h3 id=&quot;benefits&quot;&gt;Benefits&lt;/h3&gt;
 
 &lt;ul&gt;
-	&lt;li&gt;A long car ride is better shared&lt;/li&gt;
-	&lt;li&gt;Even better: a long car is best shared by a &lt;a title=&quot;Brad Parbs, Internet Rockstar&quot; href=&quot;http://bradparbs.com&quot;&gt;fellow geek&lt;/a&gt; who you can learn lots from&lt;/li&gt;
-	&lt;li&gt;Pre-conference speaker parties are the best type of party&lt;/li&gt;
-	&lt;li&gt;Grand Rapids is full of &lt;a title=&quot;Grand Rapids, Brewery Town&quot; href=&quot;https://maps.google.com/maps?q=brewery&amp;amp;hl=en&amp;amp;sll=42.96336,-85.668086&amp;amp;sspn=0.311537,0.541077&amp;amp;t=m&amp;amp;z=11&quot;&gt;breweries&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;These breweries contain lots of good food&lt;/li&gt;
-	&lt;li&gt;Don't leave your brand new macbook air box sitting on your car seat parked in a parking lot&lt;/li&gt;
-	&lt;li&gt;If you decide to ignore the previous rule then don't be surprised when someone has broken into your car and stolen your laptop&lt;/li&gt;
-	&lt;li&gt;&lt;a title=&quot;Brian Richards, Startbox founder&quot; href=&quot;http://rzen.net/&quot;&gt;Brian Richards&lt;/a&gt; (&lt;a title=&quot;@rzen&quot; href=&quot;https://twitter.com/rzen&quot;&gt;@rzen&lt;/a&gt;) knows how to make a brilliant conference badge/book&lt;/li&gt;
-	&lt;li&gt;&lt;a title=&quot;Ryan Imel, wpcandy&quot; href=&quot;http://ryanimel.com/&quot;&gt;Ryan Imel&lt;/a&gt; (&lt;a title=&quot;@ryanimel&quot; href=&quot;http://twitter.com/ryanimel&quot;&gt;@ryanimel&lt;/a&gt;) puts on a hell of show&lt;/li&gt;
-	&lt;li&gt;Brian Richards also knows how to organize &lt;a title=&quot;Grand Rapids WordCamp 2012&quot; href=&quot;http://2012.grandrapids.wordcamp.org/&quot;&gt;one hell of a conference&lt;/a&gt;&lt;/li&gt;
-	&lt;li&gt;&lt;a href=&quot;https://twitter.com/#!/search/?q=%23bathroomnirvana&amp;amp;src=hash&quot;&gt;#bathroomnirvana&lt;/a&gt; is a thing&lt;/li&gt;
-	&lt;li&gt;I should really time out my speech a little better so I don't finish at the 13 minute mark&lt;/li&gt;
-	&lt;li&gt;Free hoodies and shirts are really awesome&lt;/li&gt;
-	&lt;li&gt;Mark Jaquith is really tall!&lt;/li&gt;
-	&lt;li&gt;I think &lt;a title=&quot;John James Jacoby, BuddyPress Lead&quot; href=&quot;https://twitter.com/jjj&quot;&gt;@jjj&lt;/a&gt; &amp;amp; &lt;a title=&quot;Mark Jaquith, core WordPress developer&quot; href=&quot;https://twitter.com/markjaquith&quot;&gt;@jaquith&lt;/a&gt; were literally the giants on who's shoulders we stand on&lt;/li&gt;
-	&lt;li&gt;&lt;a title=&quot;Andy Stratton, teddy bear&quot; href=&quot;https://twitter.com/theandystratton&quot;&gt;@theandystratton&lt;/a&gt; is a really nice guy (you know underneath the hard exterior)&lt;/li&gt;
-	&lt;li&gt;Constant stomache butterflies is not a fun way to spend 5+ days&lt;/li&gt;
-	&lt;li&gt;meeting my peers in the WP community is such an inspiring experience&lt;/li&gt;
-	&lt;li&gt;I continue to be impressed by how much utility there is in twitter&lt;/li&gt;
-	&lt;li&gt;Most especially at a gathering of people (like at a conference)&lt;/li&gt;
-	&lt;li&gt;To be so closely tied to people digitally and for that to be completely irrelevant to physical proximity is a wonder that my brain is still trying to decipher&lt;/li&gt;
-	&lt;li&gt;&lt;del&gt;Conferences&lt;/del&gt; WordCamps are insanely amazing!&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">Some thoughts I had on my way home from WordCamp Grand Rapids 2012:</summary></entry><entry><title type="html">Grand Rapids slides!</title><link href="http://localhost:4000/grand-rapids-slides" rel="alternate" type="text/html" title="Grand Rapids slides!" /><published>2012-08-18T00:00:00-05:00</published><updated>2012-08-18T00:00:00-05:00</updated><id>http://localhost:4000/grand-rapids-slides</id><content type="html" xml:base="http://localhost:4000/grand-rapids-slides">&lt;p&gt;Here are my slides from my talk on WordPress and Version Control from WordCamp Grand Rapids 2012 August 18th.&lt;/p&gt;
+  &lt;li&gt;Rename files with no fear of breaking &lt;code class=&quot;highlighter-rouge&quot;&gt;includes&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;require&lt;/code&gt; calls&lt;/li&gt;
+  &lt;li&gt;Encourages using more files to more cleanly organize code into smaller logical chunks&lt;/li&gt;
+  &lt;li&gt;Reduce git merge conflicts with other developers&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;script async=&quot;&quot; class=&quot;speakerdeck-embed&quot; data-id=&quot;50356cf4eca5f60002003eef&quot; data-ratio=&quot;1.33333333333333&quot; src=&quot;//speakerdeck.com/assets/embed.js&quot;&gt;&lt;/script&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">Here are my slides from my talk on WordPress and Version Control from WordCamp Grand Rapids 2012 August 18th.</summary></entry><entry><title type="html">Demystifying the black box that is objects and arrays</title><link href="http://localhost:4000/demystifying-the-black-box-that-is-objects-and-arrays" rel="alternate" type="text/html" title="Demystifying the black box that is objects and arrays" /><published>2012-07-29T00:00:00-05:00</published><updated>2012-07-29T00:00:00-05:00</updated><id>http://localhost:4000/demystifying-the-black-box-that-is-objects-and-arrays</id><content type="html" xml:base="http://localhost:4000/demystifying-the-black-box-that-is-objects-and-arrays">&lt;p&gt;Something I hear all the time and that was initially the biggest learning for me was understanding the data and the structure of objects that we have to interact with.&lt;/p&gt;
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+&lt;p&gt;Install via composer by adding the &lt;a href=&quot;https://packagist.org/packages/aaronholbrook/autoload&quot;&gt;package&lt;/a&gt; to your composer file. &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;aaronholbrook/autoload&quot;: &quot;1.*&quot;,&lt;/code&gt; does the trick.&lt;/p&gt;
 
-&lt;p&gt;If you want to become a better programmer, you first need to understand what it is you’re trying to manipulate before you can try to manipulate. Imagine trying to solve a Rubik’s Cube with a blindfold. That is essentially what you’re trying to do without knowing how your data structure is arranged.&lt;/p&gt;
+&lt;p&gt;Be sure to include the regular composer load file via &lt;code class=&quot;highlighter-rouge&quot;&gt;require( __DIR__ . '/vendor/autoload.php' );&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Ok - enough with the abstract, let’s look at some code.&lt;/p&gt;
+&lt;p&gt;Please note that although similarly named, this Autoload library is meant for loading all PHP files in a given directory. This does &lt;strong&gt;NOT&lt;/strong&gt; function in the manner of the built-in PSR-4 PHP Autoloader.&lt;/p&gt;
 
-&lt;p&gt;Something fairly typical I do is to get some meta fields out of the database, so let’s use that as an example.&lt;/p&gt;
+&lt;p&gt;Simply load your desired &lt;code class=&quot;highlighter-rouge&quot;&gt;includes&lt;/code&gt; or whatever directory by calling:&lt;/p&gt;
 
-&lt;p&gt;The code to retrieve some &lt;a href=&quot;http://codex.wordpress.org/Function_Reference/get_post_meta&quot;&gt;post meta&lt;/a&gt; is as follows:&lt;/p&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;\AaronHolbrook\Autoload\autoload( __DIR__ . 'includes' );&lt;/code&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;get_post_meta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$post_id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$single&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;h2 id=&quot;caveats&quot;&gt;Caveats&lt;/h2&gt;
+&lt;p&gt;Since this is a recursive loader, you should be conscious of what you’re placing in your autoloaded directory.&lt;/p&gt;
+
+&lt;p&gt;Things I wouldn’t recommend doing:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Placing a big (or any) PHP library in the autoloaded directory (this should/could be handled better with &lt;a href=&quot;https://getcomposer.org/&quot;&gt;composer&lt;/a&gt; anyways!)&lt;/li&gt;
+  &lt;li&gt;Being lax with permissions on a server. Obviously this is never a good idea, but I would be sure that your folder / file permissions are up to snuff (or strange files may be loaded)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;video-walkthrough&quot;&gt;Video Walkthrough&lt;/h2&gt;
+&lt;div class=&quot;responsive-embed responsive-embed-16by9&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/watch?v=NZtwcdIcHZ4&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;disclaimer&quot;&gt;Disclaimer&lt;/h2&gt;
+&lt;p&gt;Be aware that this may not be the right choice for your project. Please be fully aware of what this plugin does and how it works.&lt;/p&gt;
+
+&lt;h2 id=&quot;links&quot;&gt;Links&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/AaronHolbrook/autoload&quot;&gt;Github&lt;/a&gt;
+&lt;a href=&quot;https://packagist.org/packages/aaronholbrook/autoload&quot;&gt;Packagist&lt;/a&gt;&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">Purpose Automatically load all PHP files in the specified directory. Recursively.</summary></entry><entry><title type="html">New plugin: Seeder</title><link href="http://localhost:4000/new-plugin-seeder" rel="alternate" type="text/html" title="New plugin: Seeder" /><published>2015-06-03T00:00:00-05:00</published><updated>2015-06-03T00:00:00-05:00</updated><id>http://localhost:4000/new-plugin-seeder</id><content type="html" xml:base="http://localhost:4000/new-plugin-seeder">&lt;p&gt;It’s nice to pre-populate terms, content or have the ability to only OCCASIONALLY run actions.&lt;/p&gt;
+
+&lt;p&gt;In the past, I’ve had to manually use special &lt;code class=&quot;highlighter-rouge&quot;&gt;$_GET&lt;/code&gt; variables.&lt;/p&gt;
+
+&lt;p&gt;Not any more! Newly released today is a little library I’m calling Seeder. What it does is provide a simple interface for admins/super admins to fire a special hook. You can easily hook onto that action in order to perform your infrequent or expensive logic.&lt;/p&gt;
+
+&lt;p&gt;This could be anything such as pre-filling content, auto-creating terms, updating the database in a certain manner, talking to or updating an API, etc.&lt;/p&gt;
+
+&lt;p&gt;Check it out on &lt;a href=&quot;https://github.com/AaronHolbrook/seeder&quot;&gt;github&lt;/a&gt; or &lt;a href=&quot;https://packagist.org/packages/aaronholbrook/seeder&quot;&gt;packagist&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Extra special thanks to &lt;a href=&quot;http://joshlevinson.me/&quot;&gt;@joshnlevinson&lt;/a&gt; for his work on building the beginning of this and for coining the term of seeding. Thanks Josh!&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">It’s nice to pre-populate terms, content or have the ability to only OCCASIONALLY run actions.</summary></entry><entry><title type="html">Fail Early, Fail Often</title><link href="http://localhost:4000/fail-early-fail-often" rel="alternate" type="text/html" title="Fail Early, Fail Often" /><published>2015-04-07T00:00:00-05:00</published><updated>2015-04-07T00:00:00-05:00</updated><id>http://localhost:4000/fail-early-fail-often</id><content type="html" xml:base="http://localhost:4000/fail-early-fail-often">&lt;p&gt;Make your code simpler to read and simpler to debug by breaking apart your conditional statements and exiting the function whenever possible.&lt;/p&gt;
+
+&lt;p&gt;This helps to:&lt;/p&gt;
+&lt;ul&gt;
+	&lt;li&gt;make your code simpler&lt;/li&gt;
+	&lt;li&gt;ensure your functions have one purpose&lt;/li&gt;
+	&lt;li&gt;keeps your functions smaller&lt;/li&gt;
+	&lt;li&gt;makes your code easier to read&lt;/li&gt;
+	&lt;li&gt;makes your code easier to debug&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;responsive-embed responsive-embed-16by9&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/watch?v=E0Eph_Cv7SA&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">Make your code simpler to read and simpler to debug by breaking apart your conditional statements and exiting the function whenever possible.</summary></entry><entry><title type="html">Developing With Composer</title><link href="http://localhost:4000/developing-with-composer" rel="alternate" type="text/html" title="Developing With Composer" /><published>2015-03-06T00:00:00-06:00</published><updated>2015-03-06T00:00:00-06:00</updated><id>http://localhost:4000/developing-with-composer</id><content type="html" xml:base="http://localhost:4000/developing-with-composer">&lt;p&gt;Did you know you can not only use Composer to manage dependencies, but actually develop a package alongside your dependencies?&lt;/p&gt;
+
+&lt;p&gt;It’s called &lt;a href=&quot;https://getcomposer.org/doc/03-cli.md#install&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;--prefer-source&lt;/code&gt;&lt;/a&gt; and boy is it neat.&lt;/p&gt;
+
+&lt;p&gt;The gist of it is this: you define a repository and require the package as you would for a normal dependency, but when you go to run &lt;code class=&quot;highlighter-rouge&quot;&gt;composer install&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;composer update&lt;/code&gt; you pass the flag &lt;code class=&quot;highlighter-rouge&quot;&gt;--prefer-source&lt;/code&gt; along with it.&lt;/p&gt;
+
+&lt;p&gt;This brings down the entire repo of the package, and provided you have access to commit to that repo, you can easily work inside the package and push changes up just as if you were working within a submodule or &lt;a href=&quot;http://www.youtube.com/watch?v=E7YWeRFHpXg&quot;&gt;subtree&lt;/a&gt; (an avenue I explored briefly before discovering this method).&lt;/p&gt;
+
+&lt;p&gt;I’ve recorded a fairly short (10 min) screencast of how to include a package from a private github repository, autoload the main file and use &lt;code class=&quot;highlighter-rouge&quot;&gt;--prefer-source&lt;/code&gt; to be able to make changes directly within the package.&lt;/p&gt;
+
+&lt;div class=&quot;responsive-embed responsive-embed-16by9&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/watch?v=fBJ5_7i06TY&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">Did you know you can not only use Composer to manage dependencies, but actually develop a package alongside your dependencies?</summary></entry><entry><title type="html">Git Subtrees - A Primer</title><link href="http://localhost:4000/git-subtrees-primer" rel="alternate" type="text/html" title="Git Subtrees - A Primer" /><published>2015-02-19T00:00:00-06:00</published><updated>2015-02-19T00:00:00-06:00</updated><id>http://localhost:4000/git-subtrees-primer</id><content type="html" xml:base="http://localhost:4000/git-subtrees-primer">&lt;h2&gt;Problem&lt;/h2&gt;
+
+&lt;p&gt;Difficult to modularize code and maintain separate repos. Submodules are difficult or problematic to use.&lt;/p&gt;
+
+&lt;h2&gt;Solution&lt;/h2&gt;
+&lt;p&gt;Git Subtrees allow you to track and update a repo within a repo without the headache of submodules.&lt;/p&gt;
+
+&lt;p&gt;For a more in depth read on what / why - check out Vinicius’ awesome &lt;a href=&quot;https://medium.com/medium-eng/how-we-modularized-mediums-ios-codebase-8f8f26965c76&quot;&gt;article&lt;/a&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;responsive-embed responsive-embed-16by9&quot;&gt;
+  &lt;iframe src=&quot;http://www.youtube.com/watch?v=E7YWeRFHpXg&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h2&gt;Setup&lt;/h2&gt;
+&lt;p&gt;Add remote to repo:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git remote add my-subtree git@github.com:account/project.git
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Let us also imagine that the field we’ll be retrieving is not a simple string, it is &lt;em&gt;gasp&lt;/em&gt; an array, or even worse - a multidimensional array. I’m going to assume for the moment that you already know what an &lt;a href=&quot;http://en.wikipedia.org/wiki/Array_data_structure&quot;&gt;array&lt;/a&gt; is.&lt;/p&gt;
+&lt;p&gt;Add subtree&lt;/p&gt;
 
-&lt;p&gt;So are field is an array and we need a specific part of that array. If we’re just starting to build out our theme and aren’t the ones that put the array together, how do we know what’s stored in it?&lt;/p&gt;
-
-&lt;p&gt;Simple - we use a PHP tool called &lt;a href=&quot;http://php.net/manual/en/function.var-dump.php&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;var_dump()&lt;/code&gt;&lt;/a&gt;. Essentially what this tool does is output the complete array structure for us to examine.&lt;/p&gt;
-
-&lt;p&gt;For the purposes of our example, I’ll do a var_dump of our retrieved meta value:&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$array_variable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;get_post_meta&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'custom_field_example'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;var_dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$array_variable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; 
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git subtree add &lt;span class=&quot;nt&quot;&gt;--prefix&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;path/to-repo repo-name branch
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Result:&lt;/p&gt;
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;key&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;value&quot;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;key2&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;tax_query&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;taxonomy&quot;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;p&gt;Push back to subtree’s repo:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git subtree push &lt;span class=&quot;nt&quot;&gt;--prefix&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;path/to-repo repo-name branch
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Right off the bat we can see that we have a multidimensional array. Now if we needed to just use an element within that array we could specify just that element. I will do so simply within the var_dump:&lt;/p&gt;
+&lt;p&gt;Pulling changes from subtree’s repo back to main repo:&lt;/p&gt;
 
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;var_dump&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$array_variable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'key2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git subtree pull &lt;span class=&quot;nt&quot;&gt;--prefix&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;path/to-repo repo-name branch
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Result:&lt;/p&gt;
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;tax_query&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;taxonomy&quot;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;p&gt;Reference: &lt;a href=&quot;https://medium.com/@v/git-subtrees-a-tutorial-6ff568381844&quot;&gt;https://medium.com/@v/git-subtrees-a-tutorial-6ff568381844&lt;/a&gt;&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">What are subtrees, why are they useful and how can they be used?</summary></entry><entry><title type="html">Testing a Transient Locking Mechanism with Siege</title><link href="http://localhost:4000/testing-transient-locking-mechanism-siege" rel="alternate" type="text/html" title="Testing a Transient Locking Mechanism with Siege" /><published>2014-07-06T00:00:00-05:00</published><updated>2014-07-06T00:00:00-05:00</updated><id>http://localhost:4000/testing-transient-locking-mechanism-siege</id><content type="html" xml:base="http://localhost:4000/testing-transient-locking-mechanism-siege">&lt;p&gt;When working with caching strategies, it’s important to step through your invalidation strategies. Namely, thinking through at what point does the data that you’re caching get regenerated, how does it get regenerated and &lt;em&gt;who&lt;/em&gt; is regenerating it. It could be regenerated any time a new post is published, on a &lt;code class=&quot;highlighter-rouge&quot;&gt;save_post&lt;/code&gt; hook by an author or admin OR it might need to be regenerated every 15 minutes by anyone hitting the front page.&lt;/p&gt;
+
+&lt;p&gt;In the latter case, you want to ensure that at the point where the cache has suddenly expired, you’re not allowing a number of concurrent users to simultaneously make the call for a regeneration of data (which generally is either computationally expensive, is lengthy or both). One way in which we can limit how many people are all slamming the regeneration is to create a short term transient lock. Essentially the idea is, the first user to go through the conditional statement will set a transient lock behind them and will be the only ones to (in my case) make the call to a weather API.&lt;/p&gt;
+
+&lt;p&gt;I wasn’t quite sure if this would be effective or not and so I decided to test my theory using &lt;a href=&quot;http://www.joedog.org/siege-home/&quot;&gt;Siege&lt;/a&gt;, a http load testing and benchmarking utility. If you’ve never used or heard of Siege before, definitely check it out. It’s an amazing tool to have in your arsenal and it makes performance and load testing your site extremely fun.&lt;/p&gt;
+
+&lt;p&gt;I recorded a quick screencast that shows me walking through my testing of the transient lock and I thought I’d share it here.&lt;/p&gt;
+
+&lt;p&gt;Enjoy!&lt;/p&gt;
+
+&lt;div class=&quot;responsive-embed responsive-embed-16by9&quot;&gt;
+  &lt;iframe src=&quot;https://www.youtube.com/watch?v=yKxwlqZMVeo&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">When working with caching strategies, it’s important to step through your invalidation strategies. Namely, thinking through at what point does the data that you’re caching get regenerated, how does it get regenerated and who is regenerating it. It could be regenerated any time a new post is published, on a save_post hook by an author or admin OR it might need to be regenerated every 15 minutes by anyone hitting the front page.</summary></entry><entry><title type="html">WordPress Permissions Update Error [RESOLVED]</title><link href="http://localhost:4000/wordpress-permissions-update-error-resolved" rel="alternate" type="text/html" title="WordPress Permissions Update Error [RESOLVED]" /><published>2014-05-31T00:00:00-05:00</published><updated>2014-05-31T00:00:00-05:00</updated><id>http://localhost:4000/wordpress-permissions-update-error-resolved</id><content type="html" xml:base="http://localhost:4000/wordpress-permissions-update-error-resolved">&lt;p&gt;Recently I ran into an issue where an installation of WordPress that had never had any issues updating stopped being able to update via the admin update button.&lt;/p&gt;
+
+&lt;p&gt;Specifically these were the errors I would see:&lt;/p&gt;
+
+&lt;pre&gt;
+Unpacking the update...
+
+The update cannot be installed because we will be unable to copy some files. This is usually due to inconsistent file permissions.: wp-admin/includes/update-core.php
+
+Installation Failed
+
+An automated WordPress update has failed to complete&lt;/pre&gt;
+
+&lt;p&gt;The solution as it turns out is to reset the file permissions on the core files.&lt;/p&gt;
+
+&lt;p&gt;Provided you have SSH access to your server, the following commands may fix your issue.&lt;/p&gt;
+
+&lt;p&gt;Reset the permissions of all files to &lt;code class=&quot;highlighter-rouge&quot;&gt;664&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;find /path/to/site/ &lt;span class=&quot;nt&quot;&gt;-type&lt;/span&gt; f &lt;span class=&quot;nt&quot;&gt;-exec&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;chmod &lt;/span&gt;664 &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;The important thing to take away from all this is that &lt;code class=&quot;highlighter-rouge&quot;&gt;var_dump()&lt;/code&gt; is your friend. Use it to experiment. If you’re unsure of what a variable or object contains &lt;code class=&quot;highlighter-rouge&quot;&gt;var_dump&lt;/code&gt; it!&lt;/p&gt;
+&lt;p&gt;Reset permissions of directories to &lt;code class=&quot;highlighter-rouge&quot;&gt;775&lt;/code&gt;:&lt;/p&gt;
 
-&lt;p&gt;Understanding that I could explore arrays and objects with &lt;code class=&quot;highlighter-rouge&quot;&gt;var_dump()&lt;/code&gt; was a major milestone on my path to becoming a better developer.&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">Something I hear all the time and that was initially the biggest learning for me was understanding the data and the structure of objects that we have to interact with.</summary></entry><entry><title type="html">Incremental Array Changes</title><link href="http://localhost:4000/incremental-array-changes" rel="alternate" type="text/html" title="Incremental Array Changes" /><published>2012-07-22T00:00:00-05:00</published><updated>2012-07-22T00:00:00-05:00</updated><id>http://localhost:4000/incremental-array-changes</id><content type="html" xml:base="http://localhost:4000/incremental-array-changes">&lt;p&gt;Something that I’ve come across recently as I start to build dynamic queries is changing the arguments array ever so slightly.&lt;/p&gt;
-
-&lt;p&gt;At first I was doing this&lt;/p&gt;
-
-&lt;p&gt;If featured posts:&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$args&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-	&lt;span class=&quot;s1&quot;&gt;'post_type'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'charity'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-	&lt;span class=&quot;s1&quot;&gt;'order'&lt;/span&gt;					&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ASC'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-	&lt;span class=&quot;s1&quot;&gt;'posts_per_page'&lt;/span&gt;		&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-	&lt;span class=&quot;s1&quot;&gt;'showposts'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-	&lt;span class=&quot;s1&quot;&gt;'tax_query'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-		&lt;span class=&quot;s1&quot;&gt;'taxonomy'&lt;/span&gt;			&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'charity-category'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-		&lt;span class=&quot;s1&quot;&gt;'field'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'slug'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-		&lt;span class=&quot;s1&quot;&gt;'terms'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'featured'&lt;/span&gt;
-	&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;find /path/to/site/ &lt;span class=&quot;nt&quot;&gt;-type&lt;/span&gt; d &lt;span class=&quot;nt&quot;&gt;-exec&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;chmod &lt;/span&gt;775 &lt;span class=&quot;o&quot;&gt;{}&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;If not featured posts:&lt;/p&gt;
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$args&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-	&lt;span class=&quot;s1&quot;&gt;'post_type'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'charity'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-	&lt;span class=&quot;s1&quot;&gt;'order'&lt;/span&gt;					&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ASC'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-	&lt;span class=&quot;s1&quot;&gt;'posts_per_page'&lt;/span&gt;		&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-	&lt;span class=&quot;s1&quot;&gt;'showposts'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;p&gt;Reset the group to the &lt;code class=&quot;highlighter-rouge&quot;&gt;wordpress&lt;/code&gt; group (or whatever group makes sense for you)&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;chgrp&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-R&lt;/span&gt; wordpress /path/to/site/
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;After being frustrated by the redundancy and trying a couple different variations I discovered the correct way to push elements onto the &lt;code class=&quot;highlighter-rouge&quot;&gt;$args&lt;/code&gt; array.&lt;/p&gt;
+&lt;p&gt;After running those commands I was able to successfully update WordPress with no further issues.&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">Recently I ran into an issue where an installation of WordPress that had never had any issues updating stopped being able to update via the admin update button.</summary></entry><entry><title type="html">Git Bisect</title><link href="http://localhost:4000/troubleshooting-git-bisect" rel="alternate" type="text/html" title="Git Bisect" /><published>2014-03-23T00:00:00-05:00</published><updated>2014-03-23T00:00:00-05:00</updated><id>http://localhost:4000/git-bisect</id><content type="html" xml:base="http://localhost:4000/troubleshooting-git-bisect">&lt;p&gt;One of the lowest hanging fruits to learn is how to fix code regressions quickly and easily with &lt;code class=&quot;highlighter-rouge&quot;&gt;git bisect&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;This is the correct way to create incremental array changes for your array:&lt;/p&gt;
+&lt;p&gt;Let’s say you have some website that has a bug in a feature that, previously, was working fine (and that this is not all new functionality). We can actually use our version control system to find the exact commit the bug was created.&lt;/p&gt;
 
-&lt;p&gt;First, declare all common attributes&lt;/p&gt;
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$args&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-	&lt;span class=&quot;s1&quot;&gt;'post_type'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'charity'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-	&lt;span class=&quot;s1&quot;&gt;'order'&lt;/span&gt;					&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ASC'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-	&lt;span class=&quot;s1&quot;&gt;'posts_per_page'&lt;/span&gt;		&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;p&gt;Not only can we pinpoint the bug, but &lt;code class=&quot;highlighter-rouge&quot;&gt;git bisect&lt;/code&gt; allows us to find it faster than if we were to attempt to check out every commit and see if the bug was present or not.&lt;/p&gt;
+
+&lt;p&gt;To begin, let’s run&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git bisect start
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;If featured posts, declaring incrementally&lt;/p&gt;
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'showposts'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;nv&quot;&gt;$args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'tax_query'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-		&lt;span class=&quot;s1&quot;&gt;'taxonomy'&lt;/span&gt;			&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'charity-category'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-		&lt;span class=&quot;s1&quot;&gt;'field'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'slug'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-		&lt;span class=&quot;s1&quot;&gt;'terms'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'featured'&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;If not featured posts then we’re done!&lt;/p&gt;
+&lt;p&gt;Now since, we already know the bug is present, let’s tell &lt;code class=&quot;highlighter-rouge&quot;&gt;git bisect&lt;/code&gt; that this commit is &lt;code class=&quot;highlighter-rouge&quot;&gt;bad&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;I thought at first you could simply push the array element (say &lt;code class=&quot;highlighter-rouge&quot;&gt;tax_query&lt;/code&gt; which is actually an array itself), but that actually puts it at the wrong level in the &lt;code class=&quot;highlighter-rouge&quot;&gt;$args&lt;/code&gt; array. Let’s take a look.&lt;/p&gt;
-
-&lt;p&gt;Here’s the output from our first full array entry (using &lt;a href=&quot;http://php.net/manual/en/function.var-dump.php&quot;&gt;var_dump&lt;/a&gt;):&lt;/p&gt;
-
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;post_type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;charity&quot;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;order&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;ASC&quot;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;posts_per_page&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;showposts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;tax_query&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;taxonomy&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;charity-category&quot;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;field&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;slug&quot;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;terms&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;featured&quot;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bisect&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bad&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Now, if we were to use the &lt;code&gt;&lt;a href=&quot;http://php.net/manual/en/function.array-push.php&quot;&gt;array_push&lt;/a&gt;&lt;/code&gt; method this is what we would get (assuming we’re pushing the &lt;code&gt;tax_query&lt;/code&gt; array).&lt;/p&gt;
+&lt;p&gt;Now here’s the really slick part - all we need to do is find a commit where the bug is not present. For the sake of argument, let’s say that was 4 months ago and there have been hundreds of commits in between. No sweat, because since we’ll be halving the number of commits we are checking (literally, we are bisecting it each time) we can quickly hone in on which commit introduced the bug.&lt;/p&gt;
 
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;post_type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;charity&quot;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;order&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;ASC&quot;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;posts_per_page&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;showposts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;tax_query&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;taxonomy&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;charity-category&quot;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;field&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;slug&quot;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;terms&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;featured&quot;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;p&gt;So let’s find a good commit (check it out and test to see if the bug is still present). If it is not then we now have our starting point.&lt;/p&gt;
+
+&lt;p&gt;We can now tell &lt;code class=&quot;highlighter-rouge&quot;&gt;git bisect&lt;/code&gt; that this commit is &lt;code class=&quot;highlighter-rouge&quot;&gt;good&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bisect&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;good&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;You can clearly see we’re off by a whole level at line 13. So the way around this is to just specify in the &lt;code class=&quot;highlighter-rouge&quot;&gt;array_push&lt;/code&gt; the element.&lt;/p&gt;
+&lt;p&gt;This will begin a process where git will automatically check out the commit that is halfway between the good and bad commits. Simple do a &lt;code class=&quot;highlighter-rouge&quot;&gt;git bisect good&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;git bisect bad&lt;/code&gt; if the bug is present or not. This will take a few steps, but typically no more than a handful.&lt;/p&gt;
 
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$args&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;'post_type'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'charity'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;'order'&lt;/span&gt;					&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ASC'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;'posts_per_page'&lt;/span&gt;	&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;s1&quot;&gt;'showposts'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;p&gt;At the end of the process, git will politely tell you which commit introduced the bug. This gives you a really great point to figure out exactly what change has caused the problem.&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">One of the lowest hanging fruits to learn is how to fix code regressions quickly and easily with git bisect.</summary></entry><entry><title type="html">In Which I Drop the Mic</title><link href="http://localhost:4000/in-which-i-drop-the-mic" rel="alternate" type="text/html" title="In Which I Drop the Mic" /><published>2013-07-19T00:00:00-05:00</published><updated>2013-07-19T00:00:00-05:00</updated><id>http://localhost:4000/in-which-i-drop-the-mic</id><content type="html" xml:base="http://localhost:4000/in-which-i-drop-the-mic">&lt;p&gt;The blooper reel and outtakes from an upcoming WordCamp Chicago highlight montage - many thanks to Michelle and Chris from &lt;a href=&quot;http://marktimemedia.com&quot;&gt;Marktime Media&lt;/a&gt; for putting together this awesome video.&lt;/p&gt;
 
-&lt;span class=&quot;nv&quot;&gt;$args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'tax_query'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
-	&lt;span class=&quot;s1&quot;&gt;'taxonomy'&lt;/span&gt;			&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'charity-category'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-	&lt;span class=&quot;s1&quot;&gt;'field'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'slug'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-	&lt;span class=&quot;s1&quot;&gt;'terms'&lt;/span&gt;				&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'featured'&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;And the output:&lt;/p&gt;
-&lt;div class=&quot;language-php highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;post_type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;charity&quot;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;order&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;ASC&quot;&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;posts_per_page&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;showposts&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;tax_query&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;taxonomy&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;charity-category&quot;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;field&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;slug&quot;&lt;/span&gt;
-      &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;terms&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;featured&quot;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;As you can see this matches the array structure that we want.&lt;/p&gt;
-
-&lt;p&gt;And there you have it! Incremental array changes - helpful when creating a dynamic query!&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">Something that I’ve come across recently as I start to build dynamic queries is changing the arguments array ever so slightly.</summary></entry><entry><title type="html">Good weekend</title><link href="http://localhost:4000/good-weekend" rel="alternate" type="text/html" title="Good weekend" /><published>2012-06-04T00:00:00-05:00</published><updated>2012-06-04T00:00:00-05:00</updated><id>http://localhost:4000/good-weekend</id><content type="html" xml:base="http://localhost:4000/good-weekend">&lt;p&gt;&lt;strong&gt;Today was a good day. In fact, this weekend was a good weekend.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;I attended and spoke at the 2012 Milwaukee WordCamp. What an amazing time. I came inches from a swell of honeybees. I rode an antiquated lift elevator straight out of the 1900s. I met a famous cewebrity (web celebrity). I faced fears and inspired greatness. I was inspired. I am happy.&lt;/p&gt;
-
-&lt;p&gt;My talk was on WordPress and Version Control: A Workflow. I demonstrated how to use Git and WordPress to develop locally, set up a deployment system and push deploys live with the push of a button. People were telling me great job until I left the next day. I feel confident that although I have room for improvement, I did not present something akin to dog excrement. I thank all of you who paid me with your attention, and I am looking forward to doing more such speaking in the future.&lt;/p&gt;
-
-&lt;p&gt;John James Jacoby was so great to meet and talk with. I learned about how even though it looks not as sexy, Netbeans IDE is a stronger tool than Sublime Text, since I can work through code, easily jump through functions and see diffs right in the IDE. I enjoyed meeting someone from Automattic and am looking forward to meeting more WordPress legends.&lt;/p&gt;
-
-&lt;p&gt;The after party hang out at Milwaukee Brewing Company was awesome. I had a great hour or so talking and listening to Jess Jurick from 10up, JJJ from Automattic, and Brad Parbs. I truly believe the quality connections are what make these networking events worthwhile.&lt;/p&gt;
-
-&lt;p&gt;I met a woman that likes Merlin Mann! It was incredibly exciting to finally meet someone in real life that even knows who the heck he is and what he’s done. A fleeting moment, but truly awesome. Rachel Baker’s a heck of a coder and I look forward to learning quite a bit from her.&lt;/p&gt;
-
-&lt;p&gt;My wife Julie truly deserves my sincerest thanks for playing the role of two parents this weekend and barely getting any sleep. I’m taking double shifts tonight, please get some rest.&lt;/p&gt;
-
-&lt;p&gt;Twitter rocks at conferences. I don’t use it too much in normal life, but it’s brilliant in a close group of people. Like a connectedness that you can’t see but ties everyone together.&lt;/p&gt;
-
-&lt;p&gt;Being a speaker, and coming to help out the day beforehand with other speakers is amazing. I feel like we all formed a little bit of a bond that strengthened immediately upon the attendees showing up. All of a sudden we all have something in common and are happy to see one another. I love it.&lt;/p&gt;
-
-&lt;p&gt;Connecting with geeks is awesome! I truly love geeing out about Sublime or git config files or Merlin Mann. I need to find more geeks. I wish Chicago was more of a tech city. Anyone want to geek out?&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Some thoughts that were in my brain and are now here:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Be honest. There’s no sense in lying. Just be yourself, be honest and good things will happen. Better things than if you lie.&lt;/p&gt;
-
-&lt;p&gt;I got a parking ticket because I’m an idiot. Don’t park your car over the sidewalk.&lt;/p&gt;
-
-&lt;p&gt;Find out what makes people tick and if it’s interesting dig deeper. If its not interesting go get a refill and find someone else to talk to.&lt;/p&gt;
-
-&lt;p&gt;You’re simultaneously stupider and smarter than you think you are.&lt;/p&gt;
-
-&lt;p&gt;Talking to other people is a great way to reflect upon who you are and what you’ve achieved.&lt;/p&gt;
-
-&lt;p&gt;Don’t correct someone unless you’re 100% sure you’re right and if correcting them is worth wasting your breath. Otherwise you’ll end up feeling stupid and they’ll think you’re stupid and kind of a dick.&lt;/p&gt;
-
-&lt;p&gt;Hand lotion is clutch. Dry knuckles are a bitch.&lt;/p&gt;
-
-&lt;p&gt;Present early the first day. People are pumped, they’re still there and they’re not antsy to get back to their life and family.&lt;/p&gt;
-
-&lt;p&gt;Don’t bring a 20lb camera with two lenses and a flash. Bring a light laptop, your phone and a water bottle. That’s it. Keep it light and keep it easy. You’re going to be humping this crap around for two plus days, don’t make it harder on yourself than it has to be.&lt;/p&gt;
-
-&lt;p&gt;Teaching others forces you to understand something better.&lt;/p&gt;
-
-&lt;p&gt;I would gladly drive 7 hours to experience a weekend like the one I just had.&lt;/p&gt;
-
-&lt;p&gt;Human quality connections trump quantity of connections any day.&lt;/p&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">Today was a good day. In fact, this weekend was a good weekend.</summary></entry></feed>
+&lt;div class=&quot;responsive-embed responsive-embed-16by9&quot;&gt;
+  &lt;iframe src=&quot;http://vimeo.com/70222010&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;</content><author><name>Aaron Holbrook</name></author><summary type="html">The blooper reel and outtakes from an upcoming WordCamp Chicago highlight montage - many thanks to Michelle and Chris from Marktime Media for putting together this awesome video.</summary></entry></feed>

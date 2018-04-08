@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Git Bisect | Holbrook, Inc.</title>
+<meta name="generator" content="Jekyll v3.7.3">
+<meta property="og:title" content="Git Bisect">
+<meta name="author" content="Aaron Holbrook">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="One of the lowest hanging fruits to learn is how to fix code regressions quickly and easily with git bisect.">
+<meta property="og:description" content="One of the lowest hanging fruits to learn is how to fix code regressions quickly and easily with git bisect.">
+<link rel="canonical" href="http://localhost:4000/troubleshooting-git-bisect">
+<meta property="og:url" content="http://localhost:4000/troubleshooting-git-bisect">
+<meta property="og:site_name" content="Holbrook, Inc.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2014-03-23T00:00:00-05:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@aaronjholbrook">
+<meta name="twitter:creator" content="@aaronjholbrook">
+<script type="application/ld+json">
+{"description":"One of the lowest hanging fruits to learn is how to fix code regressions quickly and easily with git bisect.","author":{"@type":"Person","name":"Aaron Holbrook"},"@type":"BlogPosting","url":"http://localhost:4000/troubleshooting-git-bisect","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/images/a7-dark-on-light.png"},"name":"Aaron Holbrook"},"headline":"Git Bisect","dateModified":"2014-03-23T00:00:00-05:00","datePublished":"2014-03-23T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/troubleshooting-git-bisect"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tajawal:400,400i,700,700i%7CRaleway:400,400i,500,500i%7CSource+Code+Pro:400,500">
+  <link rel="alternate" type="application/atom+xml" title="Holbrook, Inc." href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  git-bisect">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav">
+      <ul>
+<li><a href="/">Home</a></li>
+<li><a href="/posts/">Posts</a></li>
+<li><a href="/about/">About</a></li>
+<li><a href="/speaking">Speaking</a></li>
+<li><a href="/categories/">Categories</a></li>
+</ul>
+    </nav>
+  </div>
+<!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+      <a href="/" class="site-logo" rel="home" title="Holbrook, Inc.">
+        <img src="/images/a7-dark-on-light.png" class="site-logo-img animated fadeInDown" alt="Holbrook, Inc.">
+      </a>
+    
+    
+      <h1 class="site-title animated fadeIn"><a href="/">Holbrook, Inc.</a></h1>
+      <p class="site-description animated fadeIn" itemprop="description"><img class="emoji" title=":zap:" alt=":zap:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/26a1.png" height="20" width="20"> Things I've learned. Stuff that matters. <img class="emoji" title=":100:" alt=":100:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4af.png" height="20" width="20"></p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">Git Bisect
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author">
+<img src="/images/aaron-holbrook-photo.jpg" class="author-avatar u-photo" alt="Aaron Holbrook"><div class="author-info">
+<div class="author-name">
+        <em>by</em> <span class="p-name">Aaron Holbrook</span>
+      </div>
+<ul class="author-links">
+<li class="author-link">
+            <a class="u-url" rel="me" href="https://twitter.com/aaronjholbrook"><i class="fab fa-twitter-square fa-lg" title="Twitter"></i></a>
+          </li>
+<li class="author-link">
+            <a class="u-url" rel="me" href="https://github.com/aaronholbrook"><i class="fab fa-github-square fa-lg" title="GitHub"></i></a>
+          </li>
+</ul>
+
+<span class="read-time">1 min read</span>
+
+    <time class="page-date dt-published" datetime="2014-03-23T00:00:00-05:00"><a class="u-url" href="">March 23, 2014</a>
+</time>
+
+  </div>
+</div>
+
+        
+  <h3 class="page-taxonomies-title">Categories</h3>
+  <ul class="page-taxonomies">
+<li class="page-taxonomy"><a class="p-category" href="/categories/#git" title="Pages filed under Git">Git</a></li>
+<li class="page-taxonomy"><a class="p-category" href="/categories/#programming" title="Pages filed under Programming">Programming</a></li>
+  </ul>
+
+
+        
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>One of the lowest hanging fruits to learn is how to fix code regressions quickly and easily with <code class="highlighter-rouge">git bisect</code>.</p>
+
+<p>Let’s say you have some website that has a bug in a feature that, previously, was working fine (and that this is not all new functionality). We can actually use our version control system to find the exact commit the bug was created.</p>
+
+<p>Not only can we pinpoint the bug, but <code class="highlighter-rouge">git bisect</code> allows us to find it faster than if we were to attempt to check out every commit and see if the bug was present or not.</p>
+
+<p>To begin, let’s run</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git bisect start
+</code></pre></div></div>
+
+<p>Now since, we already know the bug is present, let’s tell <code class="highlighter-rouge">git bisect</code> that this commit is <code class="highlighter-rouge">bad</code></p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">bisect</span> <span class="nx">bad</span>
+</code></pre></div></div>
+
+<p>Now here’s the really slick part - all we need to do is find a commit where the bug is not present. For the sake of argument, let’s say that was 4 months ago and there have been hundreds of commits in between. No sweat, because since we’ll be halving the number of commits we are checking (literally, we are bisecting it each time) we can quickly hone in on which commit introduced the bug.</p>
+
+<p>So let’s find a good commit (check it out and test to see if the bug is still present). If it is not then we now have our starting point.</p>
+
+<p>We can now tell <code class="highlighter-rouge">git bisect</code> that this commit is <code class="highlighter-rouge">good</code>.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">git</span> <span class="nx">bisect</span> <span class="nx">good</span>
+</code></pre></div></div>
+
+<p>This will begin a process where git will automatically check out the commit that is halfway between the good and bad commits. Simple do a <code class="highlighter-rouge">git bisect good</code> or <code class="highlighter-rouge">git bisect bad</code> if the bug is present or not. This will take a few steps, but typically no more than a handful.</p>
+
+<p>At the end of the process, git will politely tell you which commit introduced the bug. This gives you a really great point to figure out exactly what change has caused the problem.</p>
+
+        </div>
+
+        
+          
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+    <a class="page-previous" href="/in-which-i-drop-the-mic">
+      <h4 class="page-pagination-label">Previous</h4>
+      <span class="page-pagination-title">
+        <i class="fas fa-arrow-left"></i> In Which I Drop the Mic
+
+      </span>
+    </a>
+  
+
+  
+    <a class="page-next" href="/wordpress-permissions-update-error-resolved">
+      <h4 class="page-pagination-label">Next</h4>
+      <span class="page-pagination-title">
+        WordPress Permissions Update Error [RESOLVED]
+ <i class="fas fa-arrow-right"></i>
+      </span>
+    </a>
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons">
+<a class="social-icon" href="https://twitter.com/aaronjholbrook"><i class="fab fa-twitter-square fa-2x" title="Twitter"></i></a><a class="social-icon" href="https://github.com/aaronholbrook"><i class="fab fa-github-square fa-2x" title="GitHub"></i></a><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a>
+</div>
+<div class="copyright">
+    
+      <p>Powered by <img class="emoji" title=":coffee:" alt=":coffee:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2615.png" height="20" width="20"> and <img class="emoji" title=":heart:" alt=":heart:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2764.png" height="20" width="20"></p>
+
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"></script>
+
+
+<!-- MathJax -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+
+<!-- Thanks to Michael Rose for his So Simple Jekyll Theme-->
+</html>

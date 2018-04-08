@@ -10,7 +10,7 @@ image:
 
 I'm Aaron Holbrook, Director of Web Engineering at [Zeek](https://zeek.com).
 
-I’ve used WordPress since 2004, am a [core contributor](http://profiles.wordpress.org/aaronholbrook) and have released a [few plugins](https://profiles.wordpress.org/aaronholbrook#content-plugins).
+I’ve used WordPress since 2004, am a [core contributor](http://profiles.wordpress.org/aaronholbrook) and am an author of [multiple plugins](https://profiles.wordpress.org/aaronholbrook#content-plugins) and [packages](https://packagist.org/packages/a7/).
 
 I build amazing WordPress powered publishing solutions and architect robust deployment and delivery processes.
 

@@ -89,6 +89,66 @@ var store = [{
         "tags": [],
         "url": "http://localhost:4000/wordpress-template-hierarchy-explained"
       },{
+        "title": "HTTP Error on Image Upload [RESOLVED]",
+        "excerpt":"This was a fun little issue to come across - I’ve been using Nginx as my local development server and so far have had few complications, however anytime I went to upload an image I would get a very vague HTTP Error from WordPress. After googling and coming up with...","categories": ["WordPress","Error","Server","nginx"],
+        "tags": [],
+        "url": "http://localhost:4000/http-error-on-image-upload-resolved"
+      },{
+        "title": "I've Joined 10up!",
+        "excerpt":"If you know me personally, you know I’ve been freelancing for the last two years and absolutely loving it. Being my own boss, doing work I want to do, and best of all working from home! I love the flexibility that comes with staying at home and being near my...","categories": ["10up","Aside"],
+        "tags": [],
+        "url": "http://localhost:4000/im-joining-10up-2"
+      },{
+        "title": "In Which I Drop the Mic",
+        "excerpt":"The blooper reel and outtakes from an upcoming WordCamp Chicago highlight montage - many thanks to Michelle and Chris from Marktime Media for putting together this awesome video.   ","categories": ["WordCamp"],
+        "tags": [],
+        "url": "http://localhost:4000/in-which-i-drop-the-mic"
+      },{
+        "title": "Git Bisect",
+        "excerpt":"One of the lowest hanging fruits to learn is how to fix code regressions quickly and easily with git bisect. Let’s say you have some website that has a bug in a feature that, previously, was working fine (and that this is not all new functionality). We can actually use our...","categories": ["Git","Programming"],
+        "tags": [],
+        "url": "http://localhost:4000/troubleshooting-git-bisect"
+      },{
+        "title": "WordPress Permissions Update Error [RESOLVED]",
+        "excerpt":"Recently I ran into an issue where an installation of WordPress that had never had any issues updating stopped being able to update via the admin update button. Specifically these were the errors I would see: Unpacking the update...The update cannot be installed because we will be unable to copy...","categories": ["WordPress","Server"],
+        "tags": [],
+        "url": "http://localhost:4000/wordpress-permissions-update-error-resolved"
+      },{
+        "title": "Testing a Transient Locking Mechanism with Siege",
+        "excerpt":"When working with caching strategies, it’s important to step through your invalidation strategies. Namely, thinking through at what point does the data that you’re caching get regenerated, how does it get regenerated and who is regenerating it. It could be regenerated any time a new post is published, on a save_post...","categories": ["WordPress","Programming","Caching"],
+        "tags": [],
+        "url": "http://localhost:4000/testing-transient-locking-mechanism-siege"
+      },{
+        "title": "Git Subtrees - A Primer",
+        "excerpt":"Problem Difficult to modularize code and maintain separate repos. Submodules are difficult or problematic to use. Solution Git Subtrees allow you to track and update a repo within a repo without the headache of submodules. For a more in depth read on what / why - check out Vinicius’ awesome...","categories": ["Screencast","Git"],
+        "tags": [],
+        "url": "http://localhost:4000/git-subtrees-primer"
+      },{
+        "title": "Developing With Composer",
+        "excerpt":"Did you know you can not only use Composer to manage dependencies, but actually develop a package alongside your dependencies? It’s called --prefer-source and boy is it neat. The gist of it is this: you define a repository and require the package as you would for a normal dependency, but...","categories": ["Screencast","Programming","PHP","Composer"],
+        "tags": [],
+        "url": "http://localhost:4000/developing-with-composer"
+      },{
+        "title": "Fail Early, Fail Often",
+        "excerpt":"Make your code simpler to read and simpler to debug by breaking apart your conditional statements and exiting the function whenever possible. This helps to: make your code simpler ensure your functions have one purpose keeps your functions smaller makes your code easier to read makes your code easier to...","categories": ["Screencast","Programming","PHP"],
+        "tags": [],
+        "url": "http://localhost:4000/fail-early-fail-often"
+      },{
+        "title": "New plugin: Seeder",
+        "excerpt":"It’s nice to pre-populate terms, content or have the ability to only OCCASIONALLY run actions. In the past, I’ve had to manually use special $_GET variables. Not any more! Newly released today is a little library I’m calling Seeder. What it does is provide a simple interface for admins/super admins...","categories": ["WordPress","Plugin"],
+        "tags": [],
+        "url": "http://localhost:4000/new-plugin-seeder"
+      },{
+        "title": "Simpler loading with Autoload!",
+        "excerpt":"Purpose Automatically load all PHP files in the specified directory. Recursively. Benefits Rename files with no fear of breaking includes or require calls Encourages using more files to more cleanly organize code into smaller logical chunks Reduce git merge conflicts with other developersUsage Install via composer by adding the package...","categories": ["Programming","PHP","Package"],
+        "tags": [],
+        "url": "http://localhost:4000/simpler-loading-with-autoload"
+      },{
+        "title": "Programmatically clear your WP Engine cache",
+        "excerpt":"In my desire to create a better process for building and deploying at Zeek, I recently hit a road bump while trying to perform automatic visual regression testing immediately after deployment. This is due to WP Engine’s full page cache. Immediately after we deploy our changes, WP Engine’s cache is still showing...","categories": ["Server","WordPress","Package","Plugin"],
+        "tags": [],
+        "url": "http://localhost:4000/programmatically-clear-wp-engine-cache"
+      },{
         "title": "Chocolate Chip Cookies",
         "excerpt":"A chocolate chip cookie is a drop cookie that originated in the United States and features chocolate chips as its distinguishing ingredient. The traditional recipe combines a dough composed of butter and both brown and white sugar with semi-sweet chocolate chips. Variations include recipes with other types of chocolate as...","categories": [],
         "tags": [],
