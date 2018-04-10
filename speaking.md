@@ -27,23 +27,23 @@ You can find slides to my past talks over at <a href="https://speakerdeck.com/aa
 
 <h3>WordCamp Chicago 2014</h3>
 
-{% include responsive-embed url="http://wordpress.tv/2014/08/03/aaron-holbrook-introduction-to-ides-and-debugging/" %}
+{% include responsive-embed url="https://videopress.com/v/Ejp28sjt" %}
 
 <h3>WordCamp Chicago [2012]:</h3>
 
-{% include responsive-embed url="http://wordpress.tv/2012/11/08/aaron-holbrook-wordpress-version-control-a-workflow/" %}
+{% include responsive-embed url="https://videopress.com/embed/MXU4Ejqe" %}
 
 <h3>WordCamp Grand Rapids [2012]:</h3>
 
-{% include responsive-embed url="http://wordpress.tv/2013/05/06/aaron-holbrook-wordpress-version-control-an-introduction/" %}
+{% include responsive-embed url="https://videopress.com/embed/J1tqzJVl" %}
 
 <h3>WordSesh [2013]</h3>
 
-{% include responsive-embed url="http://www.youtube.com/watch?feature=player_detailpage&v=e1V05YZ9hVk#t=81s" %}
+{% include responsive-embed url="https://www.youtube.com/embed/e1V05YZ9hVk#t=81s" %}
 
 <h3>Setting up Xdebug with PHPStorm:</h3>
 
-{% include responsive-embed url="https://www.youtube.com/watch?v=jkv0dzW3IM4" %}
+{% include responsive-embed url="https://www.youtube.com/embed/jkv0dzW3IM4" %}
 
 <h3>Explaining the WordPress Template Heirarchy</h3>
-{% include responsive-embed url="http://www.youtube.com/watch?v=-AO5jBsUpJY" %}
+{% include responsive-embed url="http://www.youtube.com/embed/-AO5jBsUpJY" %}
