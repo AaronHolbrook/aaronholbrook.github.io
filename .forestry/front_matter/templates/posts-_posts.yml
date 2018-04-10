@@ -1,0 +1,20 @@
+---
+pages:
+- _posts/what-my-development-workflow-looks-like-in-2018.md
+hide_body: false
+fields:
+- name: layout
+  label: Layout
+  type: text
+  hidden: false
+  default: post
+- name: comments
+  label: Comments
+  type: boolean
+  hidden: false
+  default: true
+- name: share
+  label: Share
+  type: boolean
+  hidden: false
+  default: true

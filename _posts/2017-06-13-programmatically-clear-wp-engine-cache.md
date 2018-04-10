@@ -1,14 +1,14 @@
 ---
-title: "Programmatically clear your WP Engine cache"
+title: Programmatically clear your WP Engine cache
 permalink: "/programmatically-clear-wp-engine-cache/"
 categories:
-  - Server
-  - WordPress
-  - Package
-  - Plugin
+- Server
+- WordPress
+- Package
+- Plugin
+date: 2017-06-13 00:00:00 +0000
 ---
-
-In my desire to create a better process for building and deploying at <a href="http://zeek.com">Zeek</a>, I recently hit a road bump while trying to perform automatic visual regression testing immediately after deployment.
+In my desire to create a better process for building and deploying at [Zeek](https://zeek.com "Zeek Interactive"), I recently hit a road bump while trying to perform automatic visual regression testing immediately after deployment.
 
 ![center-aligned-image](/images/wpengine.png){: .align-center}
 
