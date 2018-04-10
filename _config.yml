@@ -16,8 +16,6 @@ google_fonts:
   - name: "Source Code Pro"
     weights: "400"
 google_analytics: "UA-24616230-1"
-disqus:
-  shortname: "aaronjholbrook"
 twitter:
   username: aaronjholbrook
 
