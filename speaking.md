@@ -27,7 +27,7 @@ You can find slides to my past talks over at <a href="https://speakerdeck.com/aa
 
 <h3>WordCamp Chicago 2014</h3>
 
-{% include responsive-embed url="https://videopress.com/v/Ejp28sjt" %}
+{% include responsive-embed url="https://videopress.com/embed/Ejp28sjt" %}
 
 <h3>WordCamp Chicago [2012]:</h3>
 
