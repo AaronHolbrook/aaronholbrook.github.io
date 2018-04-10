@@ -1,4 +1,6 @@
 ---
+pages:
+- _posts/what-my-development-workflow-looks-like-in-2018.md
 hide_body: false
 fields:
 - name: layout
