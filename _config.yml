@@ -8,7 +8,6 @@ date_format: "%B %-d, %Y"
 read_time: true
 permalink: /:title/
 words_per_minute: 200
-mathjax: true
 google_fonts:
   - name: "Tajawal"
     weights: "400,400i,700,700i"

@@ -10,11 +10,47 @@ $serif-font-family: "Raleway", serif !default;
 $sans-serif-font-family: "Tajawal", sans-serif !default;
 $monospace-font-family: "Source Code Pro", Menlo, Consolas, Monaco, "Courier New", Courier, monospace !default;
 
+/**
+ * Font Sizes
+ */
+$base-font-size: 18px;
+$min-font-size: 16px;
+$max-font-size: 20px;
+
+$site-logo-width: 100px;
+$site-logo-height: 100px;
+
+/**
+ * Syntax Highlighting
+ */
+div.highlighter-rouge,
+figure.highlight {
+  position: relative;
+  margin-bottom: 1em;
+  background: #333;
+
+  font-family: $monospace-font-family;
+  line-height: 1.8;
+
+  > pre,
+  pre.highlight {
+    margin: 0;
+    padding: 1em;
+  }
+}
 
 @import "so-simple";
 
-.animated {
-	// animation-duration: .5s;
+.site-nav {
+	margin-bottom: 0;
+}
+
+h1.site-title {
+	margin-top: 0;
+}
+
+code {
+	font-size: .9rem;
 }
 
 .site-nav ul {
