@@ -2,7 +2,7 @@ locale: en-US
 title: "Aaron Holbrook"
 description: "Musings, learnings, and creations."
 baseurl: ""
-logo: "/images/a7-dark-on-light.png"
+logo: "/images/aaron-holbrook-logo.jpg"
 url: https://aaronjholbrook.com
 date_format: "%B %-d, %Y"
 read_time: true
