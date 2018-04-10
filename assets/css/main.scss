@@ -20,26 +20,18 @@ $max-font-size: 20px;
 $site-logo-width: 100px;
 $site-logo-height: 100px;
 
+@import "so-simple";
+
 /**
  * Syntax Highlighting
  */
 div.highlighter-rouge,
 figure.highlight {
-  position: relative;
-  margin-bottom: 1em;
-  background: #333;
+  background: #f8f8f8;
 
-  font-family: $monospace-font-family;
-  line-height: 1.8;
-
-  > pre,
-  pre.highlight {
-    margin: 0;
-    padding: 1em;
-  }
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 25px rgba( 0,0,0,.02) inset;
 }
-
-@import "so-simple";
 
 .site-nav {
 	margin-bottom: 0;
