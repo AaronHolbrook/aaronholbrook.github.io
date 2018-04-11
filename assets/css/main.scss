@@ -33,6 +33,21 @@ figure.highlight {
   box-shadow: 0 0 25px rgba( 0,0,0,.02) inset;
 }
 
+a.site-logo {
+	border-radius: 100%;
+	background: #fff;
+}
+
+.site-logo-img {
+	width: 140px;
+	height: 125px;
+	background: none;
+	border: none;
+	border-radius: 0;
+	padding: 10px;
+	margin: 1rem;
+}
+
 .site-nav {
 	margin-bottom: 0;
 }
