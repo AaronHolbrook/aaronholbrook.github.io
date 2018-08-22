@@ -11,6 +11,7 @@ I sometimes speak at conferences, meetups and tech groups.
 
 Some of the past engagements I've had the honor of speaking at:
 <ul>
+  <li><a title="Safe and Happy Deployments using Automation" href="https://wordpress.tv/2018/06/18/aaron-holbrook-safe-and-happy-deployments-using-automation/">WordCamp Orange County 2018</a></li>
  	<li><a title="Aaron Holbrook, Milwaukee WordCamp Speaker" href="http://2012.milwaukee.wordcamp.org/speakers/#aaron-holbrook">WordCamp Milwaukee 2012</a></li>
  	<li><a title="Grand Rapids Speaker Aaron Holbrook" href="http://2012.grandrapids.wordcamp.org/speakers/#aaron-holbrook">WordCamp Grand Rapids 2012</a> - <a title="Aaron Holbrook giving a presentation on Version Control and WordPress at Grand Rapids WordCamp 2012" href="http://wordpress.tv/2013/05/06/aaron-holbrook-wordpress-version-control-an-introduction/">Video</a></li>
  	<li><a title="Chicago WordPress Speaker Aaron Holbrook" href="http://2012.chicago.wordcamp.org/speakers/#aaron-holbrook">WordCamp Chicago 2012</a></li>
@@ -24,6 +25,9 @@ Some of the past engagements I've had the honor of speaking at:
 </ul>
 
 You can find slides to my past talks over at <a href="https://speakerdeck.com/aaronholbrook">speakerdeck</a>.
+
+<h3>WordCamp Orange County 2018</h3>
+{% include responsive-embed url="https://videopress.com/v/dZYHGVqP" %}
 
 <h3>WordCamp Chicago 2014</h3>
 
