@@ -23,31 +23,3 @@ Some of the past engagements I've had the honor of speaking at:
  	<li><a href="http://www.youtube.com/watch?v=e1V05YZ9hVk">WordSesh 2013</a></li>
  	<li><a href="http://www.cmsexpo.net/sessions/2-239-WordPress_IS_a_CMS_Dammit!">CMS Expo 2013</a></li>
 </ul>
-
-You can find slides to my past talks over at <a href="https://speakerdeck.com/aaronholbrook">speakerdeck</a>.
-
-<h3>WordCamp Orange County 2018</h3>
-{% include responsive-embed url="https://videopress.com/v/dZYHGVqP" %}
-
-<h3>WordCamp Chicago 2014</h3>
-
-{% include responsive-embed url="https://videopress.com/embed/Ejp28sjt" %}
-
-<h3>WordCamp Chicago [2012]:</h3>
-
-{% include responsive-embed url="https://videopress.com/embed/MXU4Ejqe" %}
-
-<h3>WordCamp Grand Rapids [2012]:</h3>
-
-{% include responsive-embed url="https://videopress.com/embed/J1tqzJVl" %}
-
-<h3>WordSesh [2013]</h3>
-
-{% include responsive-embed url="https://www.youtube.com/embed/e1V05YZ9hVk#t=81s" %}
-
-<h3>Setting up Xdebug with PHPStorm:</h3>
-
-{% include responsive-embed url="https://www.youtube.com/embed/jkv0dzW3IM4" %}
-
-<h3>Explaining the WordPress Template Heirarchy</h3>
-{% include responsive-embed url="http://www.youtube.com/embed/-AO5jBsUpJY" %}
