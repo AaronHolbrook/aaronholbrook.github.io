@@ -12,7 +12,9 @@ I'm Aaron Holbrook, Principal Engineer at [Zeek](https://zeek.com).
 
 I’ve used WordPress since 2004, am a [core contributor](http://profiles.wordpress.org/aaronholbrook) and am an author of [multiple plugins](https://profiles.wordpress.org/aaronholbrook#content-plugins) and [packages](https://packagist.org/packages/a7/).
 
-I build amazing WordPress powered publishing solutions and architect robust deployment and delivery processes.
+I've been using Laravel since 2016 to rapidly scale and build out interesting tools for businesses.
+
+I've built a robust deployment and delivery process for Zeek that makes all our deployments easy and consistent.
 
 I enjoy helping others become better developers and have spoken at several conferences including [WordCamp Milwaukee](http://2012.milwaukee.wordcamp.org/speakers/#aaron-holbrook), [WordCamp Grand Rapids](http://2012.grandrapids.wordcamp.org/speakers/#aaron-holbrook), [WordCamp Providence](http://2012.providence.wordcamp.org/session/wordpress-and-version-control/), [WordCamp Chicago](http://2012.chicago.wordcamp.org/speakers/#aaron-holbrook) and CMS Expo.
 
@@ -23,5 +25,3 @@ I built a [mechanism](https://github.com/a7/wpe-cache-flush) to easily clear the
 I created a [plugin](https://github.com/a7/seeder) to perform heavy or infrequent actions in a controlled and reproducible manner.
 
 I put together a pretty neat way to [sync your dotfiles](http://aaronjholbrook.com/my-solution-to-quickly-syncing-bash_profile-on-multiple-machines/) quickly and easily across many machines.
-
-Want to say hello? Ping me on twitter [@aaronjholbrook](http://aaronjholbrook.com/my-solution-to-quickly-syncing-bash_profile-on-multiple-machines/) to start a conversation!
